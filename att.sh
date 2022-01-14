@@ -16,19 +16,19 @@ if [ $opts = "s" ]; then
 
 clear
 echo $YELLOW"Autorizzando Bot orsetto, attendere..."
-git clone https://github.com/
-cd KENBOTT
+git clone https://github.com/orswtto/Bot-orsetto
+cd Bot-orsetto
 cp -r * ..
 cd ..
-rm -rf KENBOTT
+rm -rf Bot-orsetto
 npm i
 
 clear
-echo $GREEN"KEN BOT atualizado com sucesso!!"
+echo $GREEN"Bot-orsetto aggiornato con sucesso!!"
 
 elif [ $opts = "n"]; then
     clear
-    echo $RED"Atualização do KEN BOT foi cancelada"
+    echo $RED"L'aggiornamento del bot è stato negato"
     exit
 fi
 ##CREDITOS BRIZAS BOT ORION E OBRIGADO AO IAN POR PERMITIR O USO
