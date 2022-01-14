@@ -1,6 +1,6 @@
 ///_Questo bot è stato creato da Orsetto
 ///_Non rimuovere i crediti 
-///_Creditos ao Skiller pela base
+///_Crediti a kvan <3
 
 //API BAILEYS 
 const {
