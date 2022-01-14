@@ -789,11 +789,11 @@ client.on('CB:action,,battery', json => {
 					premium: '⟨❗⟩ QUESTO COMANDO È SOLO PER GLI *UTENTI PREMIUM* ',
 					ownerG: '⟨❗⟩ Questo comando può esser utilizzato solo dal proprietario! ',
 					ownerB: '⟨❗⟩ Questo comando può esser utilizzato solo dal mio proprietario! ',
-					admin: '⟨❗⟩ Questo comando può esser utilizzato solo dagli amministratori del gruppo! ',
-					Badmin: '⟨❗⟩ Este comando só pode ser usado quando o bot se torna administrador! '
+					admin: '⟨❗⟩ Este comando só pode ser usado por administradores de grupo! ',
+					Badmin: '⟨❗⟩ Questo comando può essere utilizzato quando il bot diventa amministratore! '
 				}
 			}
-			//CONSTS DO BOT NÃO MEXA SE N SOUBER
+			//I CONSTS DEL BOT NON SI MODIFICANO SE NON SAI
             const totalchat = await client.chats.all()
 			const botNumber = client.user.jid
 			const ownerNumber = [`${setting.ownerNumber}@s.whatsapp.net`] // 
@@ -801,11 +801,11 @@ client.on('CB:action,,battery', json => {
             const adminbotnumber = ["${setting.adminbotnumber}@s.whatsapp.net"]//
 			const frendsowner = ["${setting.frendsowner}@s.whatsapp.net"]//
 
-            //VIPS/PREMIUM ANULE APENAS UM COM // NO INICIO
-           //USE .premium + numero OU .addvip @pessoa
+            //VIPS/PREMIUM ANNULLA SOLO UNA COM // ALL'INIZIO
+           //USE .premium + numero O .addvip @persona
            const premium = JSON.parse(fs.readFileSync('./database/vip.json'))
             
-            //VIPS SETADOS NO ARQUIVO SETTINGS.JSON
+            //VIPS IMPOSTATI IN FILE SETTINGS.JSONVIPS 
             //const premium = [ownerNumber,"${setting.vip2}@s.whatsapp.net","${setting.vip3}@s.whatsapp.net","${setting.vip4}@s.whatsapp.net","${setting.vip5}@s.whatsapp.net","${setting.vip6}@s.whatsapp.net","${setting.vip7}@s.whatsapp.net","${setting.vip8}@s.whatsapp.net","${setting.vip9}@s.whatsapp.net","${setting.vip10}@s.whatsapp.net",]
             
 			const isGroup = from.endsWith('@g.us')
@@ -850,7 +850,7 @@ client.on('CB:action,,battery', json => {
 			const mentions = (teks, memberr, id) => {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
-			//STICKER REPLY/VIDEO/IMAGEM
+			//RISPOSTA ADESIVO/VIDEO/IMMAGINE
 			
 				/*if (budy.match('Bv')) {
 				if(!mek.key.fromMe){
@@ -861,14 +861,14 @@ client.on('CB:action,,battery', json => {
 				//ANTILINK
 if (budy.includes("https://")){
 		     if (!isGroup) return
-		     if (!antilink) return
-		     if (isGroupAdmins) return reply(`⟨⚜️⟩ *${pushname}* hmm, ah sei un ammonistratore. Tutto ok!`)
+		     if (!isAntiLink) return
+		     if (isGroupAdmins) return reply(`⟨⚜️⟩ *${pushname}* vc é admin por isso não vou te banir`)
 		    client.updatePresence(from, Presence.composing)
 		   var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
 		    setTimeout( () => {
-	    	reply(`*𝒷𝒶𝓃𝓃𝒶𝓉𝑜 𝒹𝒶𝓁 𝑔𝓇𝓊𝓅𝓅𝑜*`)
+	    	reply(`*𝑒𝑙𝑖𝑚𝑖𝑛𝑎𝑑𝑜 𝑑𝑜 𝑔𝑟𝑢𝑝𝑜*`)
 	     	}, 100)
-	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Ecco un coglione, ora ti banno! *${groupMetadata.subject}*`)
+	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Vc será banido do grupo *${groupMetadata.subject}*`)
 		    setTimeout( () => {  
 		    client.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
 					}, 10)
@@ -878,14 +878,14 @@ if (budy.includes("https://")){
 		      }
 if (budy.includes("wa.me")){
 		     if (!isGroup) return
-		     if (!antilink) return
-		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Sei admin, quindi non verrai rimosso!`)
+		     if (!isAntiLink) return
+		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Você é admin por isso não vou te banir`)
 		    client.updatePresence(from, Presence.composing)
 		   var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
 		    setTimeout( () => {
-	    	reply(`*𝒷𝒶𝓃𝓃𝒶𝓉𝑜 𝒹𝒶𝓁 𝑔𝓇𝓊𝓅𝓅𝑜*`)
+	    	reply(`*𝑒𝑙𝑖𝑚𝑖𝑛𝑎𝑑𝑜 𝑑𝑜 𝑔𝑟𝑢𝑝𝑜*`)
 	     	}, 100)
-	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Sarai bannato dal gruppo *${groupMetadata.subject}*`)
+	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Você será banido do grupo *${groupMetadata.subject}*`)
 		    setTimeout( () => {  
 		    client.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
 					}, 10)
@@ -895,14 +895,14 @@ if (budy.includes("wa.me")){
 		      }
 		if (budy.includes("Wa.me")){
 		     if (!isGroup) return
-		     if (!antilink) return
-		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Sei admin, quindi non verrai rimosso!`)
+		     if (!isAntiLink) return
+		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Você é admin por isso não vou te banir`)
 		    client.updatePresence(from, Presence.composing)
 		   var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
 		    setTimeout( () => {
-	    	reply(`*𝒷𝒶𝓃𝓃𝒶𝓉𝑜 𝒹𝒶𝓁 𝑔𝓇𝓊𝓅𝓅𝑜*`)
+	    	reply(`*𝑒𝑙𝑖𝑚𝑖𝑛𝑎𝑑𝑜 𝑑𝑜 𝑔𝑟𝑢𝑝𝑜*`)
 	     	}, 100)
-	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Sarai bannato dal gruppo. *${groupMetadata.subject}*`)
+	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Você será banido do grupo *${groupMetadata.subject}*`)
 		    setTimeout( () => {  
 		    client.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
 					}, 10)
@@ -913,13 +913,13 @@ if (budy.includes("wa.me")){
 if (budy.includes("http://")){
 		     if (!isGroup) return
 		     if (!isAntiLink) return
-		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Sei admin, non verrai rimosso!`)
+		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Você é admin por isso não vou te banir`)
 		    client.updatePresence(from, Presence.composing)
 		   var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
 		    setTimeout( () => {
-	    	reply(`*𝒷𝒶𝓃𝓃𝒶𝓉𝑜 𝒹𝒶𝓁 𝑔𝓇𝓊𝓅𝓅𝑜*`)
+	    	reply(`*𝑒𝑙𝑖𝑚𝑖𝑛𝑎𝑑𝑜 𝑑𝑜 𝑔𝑟𝑢𝑝𝑜*`)
 	     	}, 100)
-	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Sarai bannato dal gruppo. *${groupMetadata.subject}*`)
+	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Você será banido do grupo *${groupMetadata.subject}*`)
 		    setTimeout( () => {  
 		    client.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
 					}, 10)
@@ -942,7 +942,9 @@ const fakegroup = (teks) => {
 			})
 		}
 		
-////FINALIZAR TTT AUTOMATICAMENTE By: Resen
+////FINA
+////FINE TTT AUTOMATICAMENTE
+////FINE TTT AUTOMATICAMENTE By: Resen
 if (tttset.tttstatus == "off" && tttset.autoEndTime == "on") {
 tttset.autoEndTime = "off"
 } else if (tttset.tttstatus == "on" && tttset.autoEndTime == "on") {
@@ -962,7 +964,7 @@ esp.c1 = "🔲"; esp.c2 = "🔲"; esp.c3 = "🔲"
 tttset.tttstatus = "off"
 tttset.autoEndTime = "off"
 }
-   //BALANCEAMENTO DA MOEDA/DINHERO DO BOT       
+   //BAL// VALUTA/BILANCIAMENTO SOLDI BOT   
       	       if (isRegistrar ) {//SO VAI SER ADICIONADO O COIN PRA QUEM E REGISTRADO
  	           const checkATM = checkATMuser(sender)
  	           try {
@@ -974,34 +976,33 @@ tttset.autoEndTime = "off"
    	         }
    	         }
    	         
-//CORES DE MENSAGENS DI TERMUX
+//CORES DE MENSAGENS DO TERMUX
 colors = ['red','white','black','blue','yellow','green']
-//TIPI DI MESSAGGI CHE IL BOT INVIA E RICEVE
+//TIPOS DE MENSAGENS QUE O BOT ENVIA E RECEBE
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
 			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
 			const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
 			const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stickerMessage')
 			
-			//COMANDOS
+			//COMANDI
 			if (!isGroup && isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mCMD\x1b[1;37m]', time, color(command), 'de', color(pushname), color(sender.split('@')[0]),'respostas :', color(args.length))
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mCMD\x1b[1;37m]', time, color(command), 'de', color(pushname), color(sender.split('@')[0]), 'grupo', color(groupName), 'respostas :', color(args.length))
 			
-			//MENSAGENS
+			//MESSAGGI
 			if (!isGroup && !isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mMSG\x1b[1;37m]', time, color('Mensagem'), 'de', color(pushname), color(sender.split('@')[0]), 'respostas :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mMSG\x1b[1;37m]', time, color('Mensagem'), 'de', color(pushname), color(sender.split('@')[0]), 'grupo', color(groupName), 'respostas :', color(args.length))
 			
-			//CONFIGURAÇÕES STICKER NAME 1
+			//CONFIGURAZIONE NOME STICKER 1
 			let authorname = client.contacts[from] != undefined ? client.contacts[from].vname || client.contacts[from].notify : undefined	
 			if (authorname != undefined) { } else { authorname = groupName }	
 			
-			//CONSOLE LOG USUARIO BANIDO
+			//LOG UTENTI BANNATI DA CONSOLE
             if (isCmd && isBanned) {
            return console.log(color('[BAN] Ignorando comando', 'blue'), color(moment.tz('America/Sao_Paulo').format('HH:mm:ss'), 'yellow'), color(`${command}`),'DE:', color(pushname))}
-
-//_VISUALIZA AS MENSAGENS 
+ //_VISUALIZZA MESSAGGI
 client.chatRead(from)
 
-//CONFIGURAÇÕES STICKER NAME 2
+//CONFIGURAZIONE NOME STICKER 2
 			function addMetadata(packname, author) {	
 				if (!packname) packname = 'KEN'; if (!author) author = 'BOT';	
 				author = author.replace(/[^a-zA-Z0-9]/g, '');	
@@ -1062,14 +1063,14 @@ send = `${x.result.result}`
 reply(send)
 })
 break
-				case 'pulire':
-if (!isOwner) return reply('⟨❗⟩ Spiacente, questo comando può esser utilizzato solo dal mio proprietario\n\nPer informazioni digita:\n ${prefix}dono ')
+				case 'limpar':
+if (!isOwner) return reply('⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ')
 anu = await client.chats.all()
 client.setMaxListeners(25)
 for (let _ of anu) {
 client.deleteChat(_.jid)
 }
-reply('⟨✔️⟩ Sucesso! Todos os chat foram excluidos')
+reply('⟨✔️⟩ Sucesso!  Tutte le chat sono state eliminate')
 break
 case 'wikipedia':
 if (!isRegistrar) return reply(mess.registro)
@@ -1081,16 +1082,16 @@ reply(send)
 })
 break
 				case 'crg':
-				if (!isRegistrar18) return reply("la tua carta d'identità dice che hai +18 anni")//CHECAR REGISTRO
+				if (!isRegistrar18) return reply("seu registro consta que voce tem +18 anos")//CHECAR REGISTRO
      else {
-menor = `La tua carta d'identità dice che hai -18 anni!`
+menor = `Seu registro consta que voce tem -18`
     client.sendMessage(from, menor, text, {quoted: freply})
     }
 				break
 case 'musica': //@SUPRA //REMOD SKILLER
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 if (!isPremium) return reply(mess.only.premium)
-  if (args.length < 1) return reply('⟨❗⟩ Por favor, informe o nome da música')
+  if (args.length < 1) return reply('⟨❗⟩ Per favore, specifica il nome della canzone)
   reply(mess.wait)
   anu = await fetchJson(`https://api-gdr2.herokuapp.com/api/ytplay?q=${body.slice(7)}`)
   //buffer = await getBuffer(anu.result.thumb)
@@ -1101,14 +1102,14 @@ if (!isPremium) return reply(mess.only.premium)
   break
       case 'soldi':          
       case 'soldi':       
-	     case 'mieisoldi':
-	   if (!isRegistrar) return reply(mess.registro)//RICHIEDI L'ISCRIZIONE
+	     case 'imieisoldi':
+	   if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 				const dinheiro = checkATMuser(sender)
-				sayo = `┏⊱ 「 🤑SOLDI🤑 」⊰━┓\n┣⊱ *Nome* : ${pushname}\n┣⊱ *Número* : ${sender.split("@")[0]}\n┣⊱ *Soldi* : ${dinheiro}\n┗━━━━━━━━━━`
+				sayo = `┏⊱ 「 🤑DINHERO🤑 」⊰━┓\n┣⊱ *Nome* : ${pushname}\n┣⊱ *Número* : ${sender.split("@")[0]}\n┣⊱ *Dinhero* : ${dinheiro}\n┗━━━━━━━━━━`
 				reply(sayo)				
     break
     
-    case 'buyvip':						
+    case 'compravip':						
   if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
     payout2 = 1
 				const koinPerlimit2 = 1000000 //QUANTIDADE DO PREMIUM
@@ -1122,12 +1123,12 @@ if (!isPremium) return reply(mess.only.premium)
 					}
 				break				
    
-				case 'timer':
-				if (!isRegistrar) return reply(mess.registro)//RICHIEDI L'ISCRIZIONE
+				case 'tempo':
+				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 if (args[1]=="segundo") {var timer = args[0]+"000"
 } else if (args[1]=="minuto") {var timer = args[0]+"0000"
 } else if (args[1]=="hora") {var timer = args[0]+"00000"
-} else {return reply("Escolher entre: \nsegundo\nminuto\nhora\n\nExemplo: ${prefix}timer 30 segundo")}
+} else {return reply("Ascoltare entro: \secondo\minuto\ora\n\Esempio: ${prefix}tempo 30 secondi")}
 setTimeout( () => {
 reply("O tempo acabou")
 }, timer)
@@ -1140,7 +1141,7 @@ var pesan = pc.split("|")[1];
 client.sendMessage(nomor+'@s.whatsapp.net', pesan, text)
 break
 				case 'sam':
-				if (!isRegistrar) return reply(mess.registro)//RICHIEDI L'ISCRIZIONE
+				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 			data = fs.readFileSync('./src/samsamsung.js');
                  jsonData = JSON.parse(data);
                  randIndex = Math.floor(Math.random() * jsonData.length);
@@ -1149,13 +1150,13 @@ break
                 sendImage(hasil, mek, '*S-SAM KKK*')
 break
 case 'sampld':
-if (!isRegistrar) return reply(mess.registro)//RICHIEDI L'ISCRIZIONE
+if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 			data = fs.readFileSync('./src/sampld.js');
                  jsonData = JSON.parse(data);
                  randIndex = Math.floor(Math.random() * jsonData.length);
                  randKey = jsonData[randIndex];
                 hasil = await getBuffer(randKey.result)
-                sendImage(hasil, mek, '*MLK BATE PUNHETA PRA ISSO*')
+                sendImage(hasil, mek, '*MLK PUNHATE PER QUESTO*')
  break
 				case 'tagimg':
 				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
@@ -1206,10 +1207,10 @@ if (!isOwner) return reply(mess.only.ownerB)
                            break
 case 'convite':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-if (args.length < 0) return reply('⟨❗⟩ Por favor, digite o link do grupo\n\nExemplo: ${prefix}convite https://chat.whatsapp.com/CgB4scVLNTzKXmJk9z2SaL')
+if (args.length < 0) return reply('⟨❗⟩ Per favore, digite il link del gruppo\n\Esempio: ${prefix}convite https://chat.whatsapp.com/CgB4scVLNTzKXmJk9z2SaL')
 var codeInvite = body.slice(9).split('https://chat.whatsapp.com/')[1]
- if (!codeInvite) return fakegroup ('⟨❗⟩ Por favor, certifique-se de que o link está correto! ')                 
- if (args.length > 300) return client.sendMessage(from, 'Máximo 300 caracteres', msgType.text, {quoted: mek})
+ if (!codeInvite) return fakegroup ('⟨❗⟩ Per favore, controlla se il link è corretto! ')                 
+ if (args.length > 300) return client.sendMessage(from, 'Massimo 300 caratteri', msgType.text, {quoted: mek})
 var nomor = mek.participant
 teks1 = `[CONVITE]\nDe: wa.me/${sender.split("@s.whatsapp.net")[0]}\nLink: ${body.slice(9)}`
 var options = {
@@ -1678,47 +1679,47 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					try {
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('⟨❗⟩ Comando errado!\n\nDigite:\n ${prefix}antifake 1 para ativar e\n ${prefix}antifake 0 para desativar')
+					if (args.length < 1) return reply('⟨❗⟩ Comando errato!\n\Digita:\n ${prefix}antifake 1 per attivare e\n ${prefix}antifake 0 per disattivare')
 					if (Number(args[0]) === 1) {
-						if (isAntiFake) return reply('O antifake já esta ativo')
+						if (isAntiFake) return reply('O antifake è già attivo')
 						antifake.push(from)
 						fs.writeFileSync('./src/antifake.json', JSON.stringify(antifake))
-						reply('⟨✔️⟩ Sucesso! O anti-fake foi ativo no grupo️')
+						reply('⟨✔️⟩ Successo! anti-fake attivato nel gruppo️')
 					} else if (Number(args[0]) === 0) {
 						antifake.splice(from, 1)
 						fs.writeFileSync('./src/antifake.json', JSON.stringify(antifake))
-						reply('⟨✔️⟩ O anti-link foi desativado com sucesso neste grupo️')
+						reply('⟨✔️⟩ anti-link disattivato nel gruppo')
 					} else {
-						reply('*⟨❗⟩ Comando errado!\n\nDigite:\n ${prefix}antifake 1 para ativar e\n ${prefix}antifake 0 para desativar*')
+						reply('*⟨❗⟩ Comando errato!\n\Digita:\n ${prefix}antifake 1 per attivare e\o ${prefix}antifake 0 per disattivare*')
 					}
 					} catch {
-						reply('⟨❗⟩ ERRO. Tente novamente*')
+						reply('⟨❗⟩ ERRORE. Ritenta nuovamente*')
 					}
                 break
 				//_DONO
-				case 'delete':
-				case 'del':
-				case 'd':  
+				case 'cancella':
+				case 'canc':
+				case 'c':  
 				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					client.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 					break
 				case 'dono':
 				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					buffer = await getBuffer(`https://i.ibb.co/VggwwCr/ARQUIVED-BY-KEN-20210802-212137.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '*CRIADOR:* KEN\n*YOUTUBE:* https://youtube.com/channel/UCxz0aBAu-geMp5zTwessHhg\n*WPP:* wa.me/+557999076521\n\n\nEspero que tenham gostado do bot 🥵'})
-					  client.sendMessage(from, 'Contato do meu dono:\nWa.me/557999076521',MessageType.text, { quoted: freply} )
+					client.sendMessage(from, buffer, image, '})
+					  client.sendMessage(from, 'Contatti dei miei proprietari:\nWa.me/2209931214  Wa.me/',MessageType.text, { quoted: freply} )
                     break
 					
 					break
 				case 'clearall':
 				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-					if (!isOwner) return reply('⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ')
+					if (!isOwner) return reply('⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal creatore\n\Per altre informazioni digita:\n ${prefix}creatore ')
 					anu = await client.chats.all()
 					client.setMaxListeners(25)
 					for (let _ of anu) {
 						client.deleteChat(_.jid)
 					}
-					reply('⟨✔️⟩ Sucesso! Todos os chat foram excluidos')
+					reply('⟨✔️⟩ Successo! Tutte le chat sono state eliminate')
 					break
 case 'tomp3':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
@@ -1731,7 +1732,7 @@ duh = await client.downloadAndSaveMediaMessage(mitri)
 ran = getRandom('.mp4')
 exec(`ffmpeg -i ${duh} ${ran}`, (err) => {
 fs.unlinkSync(duh)
-if (err) return reply('⟨❗⟩ Falha ao converter video para mp3')
+if (err) return reply('⟨❗⟩ Fallimento nel convertire un video in mp3)
 buffer = fs.readFileSync(ran)
 client.sendMessage(from, buffer, audio, {
 mimetype: 'audio/mp4', quoted: mek
@@ -1741,8 +1742,8 @@ fs.unlinkSync(ran)
 break
 				case 'bc':
 				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-					if (!isOwner) return reply('⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ')
-					if (args.length < 1) return reply('⟨❗⟩ Qual o texto mlk? Tu é o dono e n sabe kr?')
+					if (!isOwner) return reply('⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal creatore n\Per altre informazioni digita:\n ${prefix}creatore ')
+					if (args.length < 1) return reply('⟨❗⟩ Qual è il testo mlk? Tu e il proprietario non lo conoscete?')
 					anu = await client.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -1750,18 +1751,18 @@ break
 						for (let _ of anu) {
 							client.sendMessage(_.jid, buff, image, {caption: `[ 𝐓𝐫𝐚𝐧𝐬𝐦𝐢𝐬𝐬𝐚̃𝐨 𝐝𝐨 ♞͜͡🐊ঔৣ͜͡𝙆ΞИ☂︎™ ]\n\n${body.slice(4)}`})
 						}
-						reply('⟨✔️⟩ Tm enviada com sucesso!')
+						reply('⟨✔️⟩ Tm inviata con successo!')
 					} else {
 						for (let _ of anu) {
 							sendMess(_.jid, `[ 𝐓𝐫𝐚𝐬𝐦𝐢𝐬𝐚̃𝐨 𝐝𝐨 ♞͜͡🐊ঔৣ͜͡𝙆ΞИ☂︎™ ]\n\n${body.slice(4)}`)
 						}
-						reply('⟨✔️⟩ Tm enviada com sucesso!')
+						reply('⟨✔️⟩ Tm inviata con successo!')
 					}
 					break
 case 'aviso':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-					if (!isOwner) return reply('⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ')
-					if (args.length < 1) return reply('⟨❗⟩ Qual o texto mlk? Tu é o dono e n sabe kr?')
+					if (!isOwner) return reply('⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal creatore\n\Per maggiori informazioni digita:\n ${prefix}creatore ')
+					if (args.length < 1) return reply('⟨❗⟩ Qual èiltestomlk? Tu e il proprietario non lo conoscete?')
 					anu = await client.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -1769,18 +1770,18 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 						for (let _ of anu) {
 							client.sendMessage(_.jid, buff, image, {caption: `[ 𝐀𝐯𝐢𝐬𝐨 ♞͜͡🐊ঔৣ͜͡𝙆ΞИ☂︎™ ]\n\n${body.slice(4)}`})
 						}
-						reply('⟨✔️⟩ Tm enviada com sucesso!')
+						reply('⟨✔️⟩ Tm inviata con successo!')
 					} else {
 						for (let _ of anu) {
 							sendMess(_.jid, `[ 𝐀𝐯𝐢𝐬𝐨 𝐝𝐨 ♞͜͡🐊ঔৣ͜͡𝙆ΞИ☂︎™ ]\n\n${body.slice(7)}`)
 						}
-						reply('⟨✔️⟩ Tm enviada com sucesso!')
+						reply('⟨✔️⟩ Tm inviata con successo!')
 					}
 					break
 case 'divulgar':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-					if (!isOwner) return reply('⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ')
-					if (args.length < 1) return reply('⟨❗⟩ Qual o texto mlk? Tu é o dono e n sabe kr?')
+					if (!isOwner) return reply('⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal creatore \n\Per maggioriinformazionidigita:\n ${prefix}creatore ')
+					if (args.length < 1) return reply('⟨❗⟩ Qual è il testo mlk? Tu e il proprietario non lo conoscete?')
 					anu = await client.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -1788,12 +1789,12 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 						for (let _ of anu) {
 							client.sendMessage(_.jid, buff, image, {caption: `[ 𝐕𝐢𝐝𝐞𝐨 𝐧𝐨𝐯𝐨 𝐝𝐨 𝐬𝐤𝐢𝐥𝐥𝐞𝐫 ♞͜͡🐊ঔৣ͜͡𝙆ΞИ☂︎™ ]\n\n${body.slice(4)}`})
 						}
-						reply('⟨✔️⟩ Tm enviada com sucesso!')
+						reply('⟨✔️⟩ Tm inviata con successo!')
 					} else {
 						for (let _ of anu) {
 							sendMess(_.jid, `[ 𝐕𝐢𝐝𝐞𝐨 𝐧𝐨𝐯𝐨 𝐝𝐨 𝐬𝐤𝐢𝐥𝐥𝐞𝐫 ♞͜͡🐊ঔৣ͜͡𝙆ΞИ☂︎™ ]\n\n${body.slice(10)}`)
 						}
-						reply('⟨✔️⟩ Tm enviada com sucesso!')
+						reply('⟨✔️⟩ Tm inviata con successo!')
 					}
 					break
 				case 'setprefix':
@@ -1808,7 +1809,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
                  //_RANKS E %
 case '%gay':		
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-	            	if (args.length < 1) return reply('⟨❗⟩ Por favor, marque alguém')
+	            	if (args.length < 1) return reply('⟨❗⟩ Per favore, tagga qualcuno')
 					rate = body.slice(5)
 					var ti =['4','9','17','28','34','48','59','62','74','83','97','100','29','94','75','82','41','39']
 					var kl = ti[Math.floor(Math.random() * ti.length)]
@@ -1816,7 +1817,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					break
 case '%feio':		
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-	            	if (args.length < 1) return reply('⟨❗⟩ Por favor, marque alguém')
+	            	if (args.length < 1) return reply('⟨❗⟩ Per favore, tagga qualcuno')
 					rate = body.slice(6)
 					var ti =['4','9','17','28','34','48','59','62','74','83','97','100','29','94','75','82','41','39']
 					var kl = ti[Math.floor(Math.random() * ti.length)]
@@ -1824,7 +1825,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					break
 case '%lindo':		
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-	            	if (args.length < 1) return reply('⟨❗⟩ Por favor, marque alguém')
+	            	if (args.length < 1) return reply('⟨❗⟩ Per favore, tagga qualcuno')
 					rate = body.slice(8)
 					var ti =['4','9','17','28','34','48','59','62','74','83','97','100','29','94','75','82','41','39']
 					var kl = ti[Math.floor(Math.random() * ti.length)]
@@ -1832,7 +1833,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					break
 case '%gostoso':		
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-	            	if (args.length < 1) return reply('⟨❗⟩ Por favor, marque alguém')
+	            	if (args.length < 1) return reply('⟨❗⟩ Per favore, tagga qualcuno')
 					rate = body.slice(9)
 					var ti =['4','9','17','28','34','48','59','62','74','83','97','100','29','94','75','82','41','39']
 					var kl = ti[Math.floor(Math.random() * ti.length)]
@@ -1840,7 +1841,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					break
 case '%gado':		
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-	            	if (args.length < 1) return reply('⟨❗⟩ Por favor, marque alguém')
+	            	if (args.length < 1) return reply('⟨❗⟩ Per favore, tagga qualcuno')
 					rate = body.slice(6)
 					var ti =['4','9','17','28','34','48','59','62','74','83','97','100','29','94','75','82','41','39']
 					var kl = ti[Math.floor(Math.random() * ti.length)]
