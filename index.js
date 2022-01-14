@@ -680,7 +680,7 @@ async function starts() {
 			if (anu.action == 'add'){
 				num = anu.participants[0]
 				if(!num.split('@')[0].startsWith(55)) {
-					client.sendMessage(mdata.id, ' ⛹️⛹ ️Números estrangeiros não sao permitidos neste grupo, consulte um Administrador👋🏌️', MessageType.text)
+					client.sendMessage(mdata.id, ' ⛹️⛹ I voip per spammare non sono ammessi, spamma altrove!👋🏌️', MessageType.text)
 					setTimeout(async function () {
 						client.groupRemove(mdata.id, [num])
 					}, 1000)
@@ -698,7 +698,7 @@ async function starts() {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `𝐎𝐩𝐚 @${num.split('@')[0]}\n𝐁𝐞𝐦 𝐯𝐢𝐧𝐝𝐨 𝐚𝐨 𝐠𝐫𝐮𝐩𝐨 *${mdata.subject}*\n\n𝐥𝐞𝐢𝐚 𝐚𝐬 𝐫𝐞𝐠𝐫𝐚𝐬 𝐝𝐨 𝐠𝐫𝐮𝐩𝐨 𝐩𝐚𝐫𝐚 𝐧𝐚𝐨 𝐬𝐞𝐫 𝐛𝐚𝐧𝐢𝐝𝐨❤️\n ${mdata.desc}`
+				teks = `𝐎𝐩𝐚 @${num.split('@')[0]}\nBenvenuto al gruppo *${mdata.subject}*\n\nleggi le regole in bio per non esser rimosso❤️\n ${mdata.desc}`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 				client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
@@ -769,26 +769,26 @@ client.on('CB:action,,battery', json => {
 			
 			//MENSAGENS SETADAS
 			mess = {
-				wait: '⟨⌛⟩ Aguarde um momento...',
+				wait: '⟨⌛⟩ Ａｓｐｅｔｔａ ｕｎ ｍｏｍｅｎｔｏ．．．',
 				registro: `
 	╭◪ *「 📝 REGISTRO 📝  」*
 	╰───────────────╮
 	╭───────────────╯
-	├❏ Para se registrar :
-	├❏「📌」Basta digitar ${prefix}rg nome/idade
-	├❏ *exemplo : ${prefix}rg NOME/15*
+	├❏ Per registrarsi :
+	├❏「📌」Basta digitare ${prefix}rg nome/età
+	├❏ *esempio : ${prefix}rg NOME/15*
 	╰───────────────╯						
 										`,
-				success: '⟨✔️⟩ Sucesso!️',
+				success: '⟨✔️⟩ Successo!️',
 				error: {
-					stick: '⟨❗⟩ Falha, ocorreu um erro ao converter a imagem em um adesivo ',
-					Iv: '⟨❗⟩ Link inválido'
+					stick: '⟨❗⟩ Errore! Non è stat possibile la conversione in sticker. ',
+					Iv: '⟨❗⟩ Link non valido'
 				},
 				only: {
-					group: '⟨❗⟩ Este comando só pode ser usado em grupos! ',
-					premium: '⟨❗⟩ ESTE PEDIDO É SO PARA *USUÁRIOS PREMIUMS*',
-					ownerG: '⟨❗⟩ Este comando só pode ser usado pelo dono! ',
-					ownerB: '⟨❗⟩ Este comando só pode ser usado pelo meu dono! ',
+					group: '⟨❗⟩ Questo comando può esser usato solo nei gruppi! ',
+					premium: '⟨❗⟩ QUESTO COMANDO È SOLO PER GLI *UTENTI PREMIUM* ',
+					ownerG: '⟨❗⟩ Questo comando può esser utilizzato solo dal proprietario! ',
+					ownerB: '⟨❗⟩ Questo comando può esser utilizzato solo dal mio proprietario! ',
 					admin: '⟨❗⟩ Este comando só pode ser usado por administradores de grupo! ',
 					Badmin: '⟨❗⟩ Este comando só pode ser usado quando o bot se torna administrador! '
 				}
