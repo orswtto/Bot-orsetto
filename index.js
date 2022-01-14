@@ -789,7 +789,7 @@ client.on('CB:action,,battery', json => {
 					premium: '⟨❗⟩ QUESTO COMANDO È SOLO PER GLI *UTENTI PREMIUM* ',
 					ownerG: '⟨❗⟩ Questo comando può esser utilizzato solo dal proprietario! ',
 					ownerB: '⟨❗⟩ Questo comando può esser utilizzato solo dal mio proprietario! ',
-					admin: '⟨❗⟩ Este comando só pode ser usado por administradores de grupo! ',
+					admin: '⟨❗⟩ Questo comando può esser utilizzato solo dagli amministratori del gruppo! ',
 					Badmin: '⟨❗⟩ Este comando só pode ser usado quando o bot se torna administrador! '
 				}
 			}
@@ -861,14 +861,14 @@ client.on('CB:action,,battery', json => {
 				//ANTILINK
 if (budy.includes("https://")){
 		     if (!isGroup) return
-		     if (!isAntiLink) return
-		     if (isGroupAdmins) return reply(`⟨⚜️⟩ *${pushname}* vc é admin por isso não vou te banir`)
+		     if (!antilink) return
+		     if (isGroupAdmins) return reply(`⟨⚜️⟩ *${pushname}* hmm, ah sei un ammonistratore. Tutto ok!`)
 		    client.updatePresence(from, Presence.composing)
 		   var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
 		    setTimeout( () => {
-	    	reply(`*𝑒𝑙𝑖𝑚𝑖𝑛𝑎𝑑𝑜 𝑑𝑜 𝑔𝑟𝑢𝑝𝑜*`)
+	    	reply(`*𝒷𝒶𝓃𝓃𝒶𝓉𝑜 𝒹𝒶𝓁 𝑔𝓇𝓊𝓅𝓅𝑜*`)
 	     	}, 100)
-	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Vc será banido do grupo *${groupMetadata.subject}*`)
+	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Ecco un coglione, ora ti banno! *${groupMetadata.subject}*`)
 		    setTimeout( () => {  
 		    client.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
 					}, 10)
@@ -878,14 +878,14 @@ if (budy.includes("https://")){
 		      }
 if (budy.includes("wa.me")){
 		     if (!isGroup) return
-		     if (!isAntiLink) return
-		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Você é admin por isso não vou te banir`)
+		     if (!antilink) return
+		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Sei admin, quindi non verrai rimosso!`)
 		    client.updatePresence(from, Presence.composing)
 		   var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
 		    setTimeout( () => {
-	    	reply(`*𝑒𝑙𝑖𝑚𝑖𝑛𝑎𝑑𝑜 𝑑𝑜 𝑔𝑟𝑢𝑝𝑜*`)
+	    	reply(`*𝒷𝒶𝓃𝓃𝒶𝓉𝑜 𝒹𝒶𝓁 𝑔𝓇𝓊𝓅𝓅𝑜*`)
 	     	}, 100)
-	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Você será banido do grupo *${groupMetadata.subject}*`)
+	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Sarai bannato dal gruppo *${groupMetadata.subject}*`)
 		    setTimeout( () => {  
 		    client.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
 					}, 10)
@@ -895,14 +895,14 @@ if (budy.includes("wa.me")){
 		      }
 		if (budy.includes("Wa.me")){
 		     if (!isGroup) return
-		     if (!isAntiLink) return
-		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Você é admin por isso não vou te banir`)
+		     if (!antilink) return
+		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Sei admin, quindi non verrai rimosso!`)
 		    client.updatePresence(from, Presence.composing)
 		   var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
 		    setTimeout( () => {
-	    	reply(`*𝑒𝑙𝑖𝑚𝑖𝑛𝑎𝑑𝑜 𝑑𝑜 𝑔𝑟𝑢𝑝𝑜*`)
+	    	reply(`*𝒷𝒶𝓃𝓃𝒶𝓉𝑜 𝒹𝒶𝓁 𝑔𝓇𝓊𝓅𝓅𝑜*`)
 	     	}, 100)
-	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Você será banido do grupo *${groupMetadata.subject}*`)
+	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Sarai bannato dal gruppo. *${groupMetadata.subject}*`)
 		    setTimeout( () => {  
 		    client.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
 					}, 10)
@@ -913,13 +913,13 @@ if (budy.includes("wa.me")){
 if (budy.includes("http://")){
 		     if (!isGroup) return
 		     if (!isAntiLink) return
-		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Você é admin por isso não vou te banir`)
+		     if (isGroupAdmins) return reply(`*${pushname}*⟨⚜️⟩ Sei admin, non verrai rimosso!`)
 		    client.updatePresence(from, Presence.composing)
 		   var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
 		    setTimeout( () => {
-	    	reply(`*𝑒𝑙𝑖𝑚𝑖𝑛𝑎𝑑𝑜 𝑑𝑜 𝑔𝑟𝑢𝑝𝑜*`)
+	    	reply(`*𝒷𝒶𝓃𝓃𝒶𝓉𝑜 𝒹𝒶𝓁 𝑔𝓇𝓊𝓅𝓅𝑜*`)
 	     	}, 100)
-	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Você será banido do grupo *${groupMetadata.subject}*`)
+	     	reply(`*_「 link  detectado 」_*\n*${pushname}* Sarai bannato dal gruppo. *${groupMetadata.subject}*`)
 		    setTimeout( () => {  
 		    client.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
 					}, 10)
@@ -974,9 +974,9 @@ tttset.autoEndTime = "off"
    	         }
    	         }
    	         
-//CORES DE MENSAGENS DO TERMUX
+//CORES DE MENSAGENS DI TERMUX
 colors = ['red','white','black','blue','yellow','green']
-//TIPOS DE MENSAGENS QUE O BOT ENVIA E RECEBE
+//TIPI DI MESSAGGI CHE IL BOT INVIA E RICEVE
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
 			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
 			const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
@@ -1042,7 +1042,7 @@ client.chatRead(from)
 				})	
 				
 }
-//COMANDOS PRIVATE BOT
+//COMANDI PRIVATI DEL BOT
 			switch(command) {
 				case 'amongus':
 if (args.length == 0) return reply(`Exemplo: ${prefix + command} ${pushname}`)
@@ -1062,8 +1062,8 @@ send = `${x.result.result}`
 reply(send)
 })
 break
-				case 'limpar':
-if (!isOwner) return reply('⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ')
+				case 'pulire':
+if (!isOwner) return reply('⟨❗⟩ Spiacente, questo comando può esser utilizzato solo dal mio proprietario\n\nPer informazioni digita:\n ${prefix}dono ')
 anu = await client.chats.all()
 client.setMaxListeners(25)
 for (let _ of anu) {
@@ -1081,9 +1081,9 @@ reply(send)
 })
 break
 				case 'crg':
-				if (!isRegistrar18) return reply("seu registro consta que voce tem +18 anos")//CHECAR REGISTRO
+				if (!isRegistrar18) return reply("la tua carta d'identità dice che hai +18 anni")//CHECAR REGISTRO
      else {
-menor = `Seu registro consta que voce tem -18`
+menor = `La tua carta d'identità dice che hai -18 anni!`
     client.sendMessage(from, menor, text, {quoted: freply})
     }
 				break
@@ -1099,12 +1099,12 @@ if (!isPremium) return reply(mess.only.premium)
   client.sendMessage(from, buffer, image, {quoted: mek, quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": anu.result.title, 'jpegThumbnail': fs.readFileSync('kk/sticker/botlogo.webp')}}}})					
   client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', ptt:true, quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": `${anu.result.title}.mp3`, 'jpegThumbnail': await getBuffer(anu.result.thumb)}}}})
   break
-      case 'dinhero':          
-      case 'dinheiro':       
-	     case 'meudinhero':
-	   if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
+      case 'soldi':          
+      case 'soldi':       
+	     case 'mieisoldi':
+	   if (!isRegistrar) return reply(mess.registro)//RICHIEDI L'ISCRIZIONE
 				const dinheiro = checkATMuser(sender)
-				sayo = `┏⊱ 「 🤑DINHERO🤑 」⊰━┓\n┣⊱ *Nome* : ${pushname}\n┣⊱ *Número* : ${sender.split("@")[0]}\n┣⊱ *Dinhero* : ${dinheiro}\n┗━━━━━━━━━━`
+				sayo = `┏⊱ 「 🤑SOLDI🤑 」⊰━┓\n┣⊱ *Nome* : ${pushname}\n┣⊱ *Número* : ${sender.split("@")[0]}\n┣⊱ *Soldi* : ${dinheiro}\n┗━━━━━━━━━━`
 				reply(sayo)				
     break
     
@@ -1123,7 +1123,7 @@ if (!isPremium) return reply(mess.only.premium)
 				break				
    
 				case 'timer':
-				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
+				if (!isRegistrar) return reply(mess.registro)//RICHIEDI L'ISCRIZIONE
 if (args[1]=="segundo") {var timer = args[0]+"000"
 } else if (args[1]=="minuto") {var timer = args[0]+"0000"
 } else if (args[1]=="hora") {var timer = args[0]+"00000"
@@ -1140,7 +1140,7 @@ var pesan = pc.split("|")[1];
 client.sendMessage(nomor+'@s.whatsapp.net', pesan, text)
 break
 				case 'sam':
-				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
+				if (!isRegistrar) return reply(mess.registro)//RICHIEDI L'ISCRIZIONE
 			data = fs.readFileSync('./src/samsamsung.js');
                  jsonData = JSON.parse(data);
                  randIndex = Math.floor(Math.random() * jsonData.length);
@@ -1149,7 +1149,7 @@ break
                 sendImage(hasil, mek, '*S-SAM KKK*')
 break
 case 'sampld':
-if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
+if (!isRegistrar) return reply(mess.registro)//RICHIEDI L'ISCRIZIONE
 			data = fs.readFileSync('./src/sampld.js');
                  jsonData = JSON.parse(data);
                  randIndex = Math.floor(Math.random() * jsonData.length);
