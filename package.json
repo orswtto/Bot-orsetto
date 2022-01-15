@@ -2,7 +2,7 @@
   "name": "Bot-orsetto",
   "version": "2.0.0",
   "description": "No comment",
-  "main": "index.js",
+  "main": "start.js",
   "directories": {
     "lib": "lib"
   },
