@@ -17,7 +17,7 @@
     "whatsapp",
     "bot"
   ],
-  "author": "KEN",
+  "author": "orswtto",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "^3.4.1",
