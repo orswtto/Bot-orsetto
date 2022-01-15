@@ -134,29 +134,29 @@ ritorno `
 ┃ ${p}listddd (country code)
 ┃ ${p}dbackadd (num)
 ┃ ${p}dbackrm (num)
-┃ ${p}fechargp
+┃ ${p}chiudigruppo
 ┃ ${p}mudardesc
 ┃ ${p}mudarnome
-┃ ${p}abrirgp
-┃ ${p}linkgroup
+┃ ${p}aprigruppo
+┃ ${p}linkgruppo
 ┃ ${p}listadmin
 ┃ ${p}listonline
 ┃ ${p}leave
-┃ ${p}kick (dial num)
-┃ ${p}ban (resp msg)
-┃ ${p}promote (dial num)
-┃ ${p}demote (dial num)
+┃ ${p}kick (scrivi numero)
+┃ ${p}ban (rispondi al messaggio)
+┃ ${p}promuomi (scrivi numero)
+┃ ${p}demote (scrivi numero)
 ┃ ${p}add (num)
-┃ ${p}roletrussablock (1 or 0)
-┃ ${p}welcome (1 or 0)
-┃ ${p}simih (1 or 0)
-┃ ${p}autostickerimg (1 or 0)
+┃ ${p}roletrussablock (1 o 0)
+┃ ${p}welcome (1 o 0)
+┃ ${p}simih (1 o 0)
+┃ ${p}autostickerimg (1 o 0)
 ┃ ${p}onmodgrupo
 ┃ ${p}offmodgrupo
-┃ ${p}autoreply (1 or 0)
-┃ ${p}marcar
-┃ ${p}marcar2
-┃ ${p}marcar3
+┃ ${p}autoreply (1 o 0)
+┃ ${p}tagall
+┃ ${p}mtagall2
+┃ ${p}tagall3
 ┃ ${p}hidemarcar (txt)
 ┣━━━━━━🌈 𝙏𝙏𝙋 🌈━━━━━╮
 ┃ ${p}attp (txt)
@@ -172,8 +172,8 @@ ritorno `
 ┃ ${p}ttp5 (txt)
 ┃ ${p}ttp6 (txt)
 ┣━━━━🎨 𝙀𝙁𝙀𝙄𝙏𝙊𝙎 🎨━━━━╮
-┃ obs: coloque "me"
-┃ ou marque alguém
+┃ obs: metti "io"
+┃ o tagga qualcuno
 ┃
 ┃ ${p}triggerfig
 ┃ ${p}triggered
@@ -185,8 +185,8 @@ ritorno `
 ┃ ${p}lgbt 
 ┃ ${p}blur
 ┣━━━🖌️ 𝙈𝙊𝙉𝙏𝘼𝙂𝙀𝙉𝙎 🖌️━━╮
-┃ obs: coloque "me"
-┃ ou marque alguém
+┃ obs: metti "io"
+┃ o tagga qualcuno
 ┃
 ┃ ${p}trash 
 ┃ ${p}thomas 
@@ -202,10 +202,10 @@ ritorno `
 ┃ ${p}facepalm
 ┃ ${p}bluediscord
 ┃ ${p}blackdiscord
-┃ ${p}delete
+┃ ${p}elimina
 ┃ ${p}confusedstonks
 ┃ ${p}dobross
-┃ ${p}beatiful
+┃ ${p}bello
 ┃ ${p}affect
 ┃ ${p}ad
 ┣━━💥 𝙍𝙊𝙇𝙀𝙏𝘼 𝙍𝙐𝙎𝙎𝘼 💥━━╮
@@ -214,9 +214,9 @@ ritorno `
 ┃ ${p}roletarussamed
 ┃ ${p}roletarussaeasy
 ┃ ${p}roletarussapac
-┣━#️⃣ 𝙅𝙊𝙂𝙊 𝘿𝘼 𝙑𝙀𝙇𝙃𝘼 #️⃣━╮
-┃ ${p}ttt (dificulty)
-┃ ${p}coord (coordenada)
+┣━#️⃣ GIOCO DA VECCHI #️⃣━╮
+┃ ${p}ttt (difficoltà)
+┃ ${p}coord (coordinata)
 ┃ ${p}tttme
 ┃ ${p}tttrank
 ┃ ${p}ttthelp
@@ -229,13 +229,13 @@ ritorno `
 ┃ ${p}colorful (txt)
 ┃ ${p}army (txt)
 ┃ ${p}retro (txt)
-┃ ${p}frame (sec) (resp video)
-┃ ${p}mute (resp video)
-┃ ${p}rapidovid (resp video)
-┃ ${p}lentovid (resp video)
-┃ ${p}togif (resp video)
-┃ ${p}resizevid (lag) (alt) (resp vid)
-┣━━━━━🎨 𝙇𝙊𝙂𝙊𝙎 🎨━━━━╮
+┃ ${p}frame (sec) (rispondi al video)
+┃ ${p}mute (rispondi al video)
+┃ ${p}rapidovid (rispondi al video)
+┃ ${p}lentovid (rispondi al video)
+┃ ${p}togif (rispondi al video)
+┃ ${p}resizevid (lag) (alt) (rispondi al vid)
+┣━━━━━🎨 LOGO 🎨━━━━╮
 ┃ ${p}nulis (txt)
 ┃ ${p}undgrass (txt)
 ┃ ${p}love (txt)
@@ -379,18 +379,18 @@ ritorno `
 ┃ ${p}geleitortitulo
 ┃ ${p}gbanco
 ┃ ${p}gcarro
-┃ ${p}gpass (letras n)
+┃ ${p}gpass (lettera n)
 ┃ ${p}cpf
 ┃ ${p}ddd (ddd)
 ┃ ${p}cep (cep)
 ┃ ${p}gprocesso
 ┣━━━━━━🧾 𝙏𝙀𝙓𝙏𝙊 🧾━━━━╮
 ┃ ${p}nameninja (name)
-┃ ${p}fakeidentity
+┃ ${p}fakeidentita
 ┃ ${p}installbot
-┃ ${p}traduz (la) (txt)
+┃ ${p}traduci (lingua) (testo)
 ┃ ${p}wame
-┃ ${p}repeat (txt)
+┃ ${p}ripeti (testo)
 ┃ ${p}ocr (leg, resp img)
 ┃ ${p}nethunter
 ┃ ${p}idioma
