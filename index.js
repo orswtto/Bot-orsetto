@@ -84,7 +84,7 @@ var esp = require('./jdv/ttt/TTTconfig/tttframe.json');
 const dinheiro = JSON.parse(fs.readFileSync('./dinheiro/dinheiro.json')) //ONDE FICA ARMAZENADO OS DADOS
 const registro = JSON.parse(fs.readFileSync('./registro/registro.json')) //DADOS DAS PESSOAS REGISTRADAS
 const registro18 = JSON.parse(fs.readFileSync('./registro/registro18.json')) //DADOS DAS PESSOAS REGISTRADAS +18
-//_TESTE PARA VITÓRIA DE ❌
+//_TESTO PER LA VITTORIA DI ❌
 const WinnerX = () => {
 	if (
 		(esp.a1=="❌"&&esp.a2=="❌"&&esp.a3=="❌") || (esp.b1=="❌"&&esp.b2=="❌"&&esp.b3=="❌") || (esp.c1=="❌"&&esp.c2=="❌"&&esp.c3=="❌") || 
@@ -97,7 +97,7 @@ const WinnerX = () => {
 	}
 }
 
-//TESTE PARA VITÓRIA DE ⭕
+//TESTO PER LA VITTORIA DI ⭕
 const WinnerO = () => {
 	if (
 		(esp.a1=="⭕"&&esp.a2=="⭕"&&esp.a3=="⭕") || (esp.b1=="⭕"&&esp.b2=="⭕"&&esp.b3=="⭕") || (esp.c1=="⭕"&&esp.c2=="⭕"&&esp.c3=="⭕") || 
