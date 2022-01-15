@@ -1,6 +1,6 @@
 ///_Questo bot è stato creato da Orsetto
 ///_Non rimuovere i crediti 
-///_Crediti a kvan <3
+///_Aiuto da kvan <3
 
 //API BAILEYS 
 const {
@@ -46,13 +46,13 @@ const { samsamsung } = require('./src/samsamsung')
 const { sampld } = require('./src/sampld')
 const { webp2gifFile } = require("./lib/gif.js")
 
-//ARQUIVOS DA LIB
+//FILE LIBRI
 const { color, bgcolor } = require('./lib/color')
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson, fetchText } = require('./lib/fetcher')
 const { recognize } = require('./lib/ocr')
  
- //CONFIGURAÇÕES JSON
+ //IMPOSTAZIONI JSON
 const setting = JSON.parse(fs.readFileSync('./configs/settings.json'))
 const ban = JSON.parse(fs.readFileSync('./database/banned.json'))
 const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
@@ -1064,7 +1064,7 @@ reply(send)
 })
 break
 				case 'limpar':
-if (!isOwner) return reply('⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal proprietario \n\Per maggiori informazioni digita:\n ${prefix}proprietario ')
+if (!isOwner) return reply('⟨❗⟩ Errore, questo comando può essere utilizzato soltanto dal proprietario \n\Per maggiori informazioni digita:\n ${prefix}proprietario ')
 anu = await client.chats.all()
 client.setMaxListeners(25)
 for (let _ of anu) {
@@ -1082,9 +1082,9 @@ reply(send)
 })
 break
 				case 'crg':
-				if (!isRegistrar18) return reply("seu registro consta que voce tem +18 anos")//CHECAR REGISTRO
+				if (!isRegistrar18) return reply("sella carta d'identità risulta che hai +18 anni")//CHECAR REGISTRO
      else {
-menor = `Seu registro consta que voce tem -18`
+menor = `Sulla carta d'identità risulta che hai -18 anni`
     client.sendMessage(from, menor, text, {quoted: freply})
     }
 				break
