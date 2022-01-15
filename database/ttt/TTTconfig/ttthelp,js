@@ -1,0 +1,82 @@
+const ttthelp = (prefix) => {
+    return `
+╔ ═ ═ ═ 〘 INIZIO 〙
+║
+╟➟ Per iniziare digits:
+║    └「 ${prefix}ttt [ DIFFICOLTA ] 」
+║
+╟➟ Una persona alla volta
+║
+╚ ═ ═ ═ ═ ═ ═ ═ ═ ═
+╔ ═ ═ 〘 DIFFICOLTA 〙
+║
+╟➟  easy : totalmente casuale
+║      
+╟➟  normale : 66% di parità
+║             44% di vincita
+║           
+╟➟  difficile : 90% di parità
+║           10% di vincita
+║
+╟➟  impossibile : 100% parità
+╚ ═ ═ ═ ═ ═ ═ ═ ═ ═
+╔ ═ ═ 〘 PARTITA 〙
+║
+╟➟ Un nuovo gioco può solo
+║   essere avviato dopo un intervallo
+║   a 4 minuti dall'inizio
+║   dalla partita precedente
+║
+╟➟ La partita terminerà 
+║   automaticamente dopo 4 minuti
+╚ ═ ═ ═ ═ ═ ═ ═ ═ ═
+╔ ═ ═ 〘 COMANDI 〙
+║
+╟➟ Per contrassegnare digita:
+║    └「 ${prefix}coord [ COORDINATA ] 」
+║
+║
+╟➟ Esempio:
+║	 └「   ${prefix}coord a1 
+║        -------------------------------
+║	       🌀1️⃣2️⃣3️⃣
+║	       🅰️❌🔲🔲
+║	       🅱️🔲🔲🔲
+║	       ©️🔲🔲🔲  」
+║
+╚ ═ ═ ═ ═ ═ ═ ═ ═ ═
+╔ ═ ═ 〘 IL TUO STATO 〙
+║
+╟➟  Per vedere il tuo stato digita:
+║        └「 ${prefix}tttme 」
+║          
+╚ ═ ═ ═ ═ ═ ═ ═ ═ ═
+╔ ═ ═ 〘 RECOMPENSE 〙
+║
+╟➟ FACILE
+║    ├ Vittoria : +「 25 / 50 」
+║    └ Sconfitta : -「 200 / 200 」
+║
+╟➟ NORMALE
+║    ├ Vittoria : +「 75 / 150 」
+║    └ Sconfitta : -「 75 / 150 」
+║
+╟➟ DFFICILE
+║    ├ Vittoria : +「 200 / 400 」
+║    └ Sconfitta : -「 25 / 50 」
+║
+╟➟ IMPOSSIBILE
+║    ├ Vittoria : +「 1000 / 2000 」
+║    └ Sconfitta : -「 0 / 0 」
+║
+╟➟ PAREGGI
+║    └「 0 / 0 」
+║
+╟➟ PARTITA NON FINITA
+║         └ -「 75 / 150 」
+║
+╚ ═ ═ ═ ═ ═ ═ ═ ═ ═
+`
+}
+
+exports.ttthelp = ttthelp
