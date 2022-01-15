@@ -665,7 +665,7 @@ async function starts() {
 
 	fs.existsSync('./BarBar.json') && client.loadAuthInfo('./BarBar.json')
 	client.on('connecting', () => {
-		start('2', 'Conectando qrcode...')
+		start('2', 'Connettendo il codice qr...')
 	})
 	client.on('open', () => {
 		success('2', 'Prontinho conectado')
