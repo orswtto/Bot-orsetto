@@ -510,7 +510,7 @@ const IAalter = () => {
 	}
 }
 
-//JOGAR NOS CANTOS E CENTRO - IMPOSSIVEL
+//GIOCARE NEGLI ANGOLI E AL CENTRK - IMPOSSIBILE
 const priorityC = () => {
 	let randomPriC = Math.floor(Math.random() * 5)
 	switch (randomPriC) {
@@ -546,9 +546,9 @@ const priorityC = () => {
 		break
 	}
 }
-//_ END TIC-TAC-TOE CONFIG by: Resen
+//_ fine configurazione tris by: Resen
 
-//_CONEXÃO WHATSAPP WEB 
+//_CONNESIONE A  WHATSAPP WEB 
 const addLevelingXp = (sender, amount) => {
 	let position = false
 	Object.keys(_level).forEach((i) => {
@@ -789,7 +789,7 @@ client.on('CB:action,,battery', json => {
 					premium: '⟨❗⟩ QUESTO COMANDO È SOLO PER GLI *UTENTI PREMIUM* ',
 					ownerG: '⟨❗⟩ Questo comando può esser utilizzato solo dal proprietario! ',
 					ownerB: '⟨❗⟩ Questo comando può esser utilizzato solo dal mio proprietario! ',
-					admin: '⟨❗⟩ Este comando só pode ser usado por administradores de grupo! ',
+					admin: '⟨❗⟩ Questo comando può essere utilizzato soltanto da un amministratore! ',
 					Badmin: '⟨❗⟩ Questo comando può essere utilizzato quando il bot diventa amministratore! '
 				}
 			}
@@ -1064,13 +1064,13 @@ reply(send)
 })
 break
 				case 'limpar':
-if (!isOwner) return reply('⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ')
+if (!isOwner) return reply('⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal proprietario \n\Per maggiori informazioni digita:\n ${prefix}proprietario ')
 anu = await client.chats.all()
 client.setMaxListeners(25)
 for (let _ of anu) {
 client.deleteChat(_.jid)
 }
-reply('⟨✔️⟩ Sucesso!  Tutte le chat sono state eliminate')
+reply('⟨✔️⟩ Successo!  Tutte le chat sono state eliminate')
 break
 case 'wikipedia':
 if (!isRegistrar) return reply(mess.registro)
@@ -1199,9 +1199,9 @@ break
 case 'join':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 if (!isOwner) return reply(mess.only.ownerB)
-                           if (!q) return reply('⟨❗⟩ Por favor, digite o link do grupo\n\nExemplo: ${prefix}join https://chat.whatsapp.com/CgB4scVLNTzKXmJk9z2SaL')
+                           if (!q) return reply('⟨❗⟩ Per favore, digita il link del gruppo \n\Esempio: ${prefix}join https://chat.whatsapp.com/CgB4scVLNTzKXmJk9z2SaL')
                            var codeInvite = body.slice(6).split('https://chat.whatsapp.com/')[1]
-                           if (!codeInvite) return fakegroup ('⟨❗⟩ Por favor, certifique-se de que o link está correto! ')
+                           if (!codeInvite) return fakegroup ('⟨❗⟩ Per favore, controlla se il link è corretto! ')
                            var response = await client.acceptInvite(codeInvite);
                            console.log(response);
                            break
@@ -1218,16 +1218,16 @@ var options = {
 contextInfo: {mentionedJid: [sender]}, 
 }
 client.sendMessage('557999076521@s.whatsapp.net', options, text, {quoted: mek})
-reply("⟨✔️⟩ Sucesso! O seu convite foi enviado ao meu dono e está em analise\nSpam = block + ban.")
+reply("⟨✔️⟩ Successo! Il tuo invito è stato inviato al mio proprietario ed è in fase di revisione.\nSpam = block + ban.")
 break
 case 'unreadall':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-                if (!isOwner) return reply('⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ')
+                if (!isOwner) return reply('⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal proprietario\n\Per maggiori informazioni digita:\n ${prefix}proprietario ')
                 var chats = await client.chats.all()
                 chats.map( async ({ jid }) => {
                 await client.chatRead(jid, 'unread')
                     })
-		    var teks = `\`\`\`⟨✔️⟩ Sucesso! ${chats.length} chats foram narcados como não lidos\`\`\``
+		    var teks = `\`\`\`⟨✔️⟩ Successo! ${chats.length} le chat sono state contrassegnate come non lette\`\`\``
 		    await client.sendMessage(from, teks, text, {quoted: freply})
 		    console.log(chats.length)
 	        break
@@ -1242,22 +1242,22 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 						if (isAntiLink) return reply('O antilink já esta ativo')
 						antilink.push(from)
 						fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
-						reply('⟨✔️⟩ Sucesso! O anti-link foi ativo no grupo')
+						reply('⟨✔️⟩ Successo! l anti-link del gruppo è stato attivato')
 					} else if (Number(args[0]) === 0) {			
 						antilink.splice(from, 1)
 						fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
-						reply('⟨✔️⟩ O anti-link foi desativado com sucesso neste grupo')
+						reply('⟨✔️⟩ l anti-link di questo gruppo è stato disattivato con successo')
 					} else {
-						reply('⟨❗⟩ Comando errado!\n\nDigite:\n ${prefix}antilink 1 para ativar e\n ${prefix}antilink 0 para desativar')
+						reply('⟨❗⟩ Comando errato!\n\Digita:\n ${prefix}antilink 1 per attivare e\o ${prefix}antilink 0 per disattivare')
 					}
 					break
 case 'exe':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 client.updatePresence(from, Presence.composing) 
-if (!isOwner) return reply("⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ")
+if (!isOwner) return reply("⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal proprietario \n\Per maggiori informazioni digita:\n ${prefix}proprietario")
 const cmd = body.slice(4)
 exec(cmd, (err, stdout) => {
-if(err) return client.sendMessage(from, "⟨❗⟩ Comando inexistente", text, {quoted: mek})
+if(err) return client.sendMessage(from, "⟨❗⟩ Comando inesistente", text, {quoted: mek})
 if (stdout) {
 client.sendMessage(from, stdout, text, {quoted: mek})
 }
@@ -1265,7 +1265,7 @@ client.sendMessage(from, stdout, text, {quoted: mek})
 break
 case 'viplist':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-					teks = '╭────*「 *👑 VIPS DO KENBOT 👑* 」\n'
+					teks = '╭────*「 *👑 VIPS DEL KENBOT 👑* 」\n'
 					for (let V of premium) {
 						teks += `│+  @${V.split('@')[0]}\n`
 					}
@@ -1274,7 +1274,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					break
 case 'banlist':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-					teks = '╭────*「 *❌ USUÁRIOS BANIDOS ❌* 」\n'
+					teks = '╭────*「 *❌ UTENTI BANNATI ❌* 」\n'
 					for (let V of ban) {
 						teks += `│+  @${V.split('@')[0]}\n`
 					}
@@ -1283,14 +1283,14 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					break
 case 'prem':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-if (isPremium) return reply('⟨✔️⟩ Você é um usuário premium.')
+if (isPremium) return reply('⟨✔️⟩ Sei un utente premium.')
 else {
-reply('⟨❌⟩ Você não é um usuário premium.')
+reply('⟨❌⟩ Non sei un utente premium.')
 }
 break
 case  'rename':
 
-		    		if (!isQuotedSticker) return reply('⟨❗⟩ Por favor, marque uma figurinha parada')
+		    		if (!isQuotedSticker) return reply('⟨❗⟩ Per favore, tagga lo sticker interrotto)
 		            encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 				    media = await client.downloadAndSaveMediaMessage(encmedia)
 		            anu = args.join(' ').split('|')
@@ -1313,7 +1313,7 @@ case 'attp' :
 					
 					
 					catch (e) {
-						reply("⟨❗⟩ ERRO. Use apenas caracteres alfanuméricos")
+						reply("⟨❗⟩ ERRORE. Utilizzare solo caratteri alfanumerici")
 					}
 					break
 ///_BY KRATOS
@@ -1447,7 +1447,7 @@ break
         
 case 'ttp':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-if (args.length < 1) return reply(`⟨❗⟩ Por favor, insira o texto\nUso: ${prefix}ttp KEN`)
+if (args.length < 1) return reply(`⟨❗⟩ Per favore, inserisci il testo\nUso: ${prefix}ttp KEN`)
 try {var chollotxt = body.slice(5).trim()
 reply(mess.wait)
 url = encodeURI(`https://api.xteam.xyz/ttp?file&text=${chollotxt}`)
@@ -1455,7 +1455,7 @@ textofigu = await getBuffer(url)
 client.sendMessage(from, textofigu, sticker, { quoted: mek })
 }
 catch (e) {
-reply("⟨❗⟩ Por favor, use apenas caracteres alfanuméricos")
+reply("⟨❗⟩ Per favore, utilizzare solo caratteri alfanumerici ")
 }
 break
 case 'bugreport':
@@ -1469,12 +1469,12 @@ var options = {
 contextInfo: {mentionedJid: [sender]}, 
 }
 client.sendMessage('557999076521@s.whatsapp.net', options, text, {quoted: mek})
-reply("Mensagem enviada ao meu dono; Spam = block + ban.")
+reply("Messaggio inviato al mio proprietario; Spam = block + ban.")
 break
 case 'ban':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 if (!isGroup) return reply(mess.only.group)
-if (!isOwner) return reply('⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ')
+if (!isOwner) return reply('⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal proprietario \n\Per maggiori informazioni digita:\n ${prefix}proprietario ')
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return 
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 pru = '.\n'
@@ -1483,14 +1483,14 @@ pru += `@${_.split('@')[0]}\n`
 }
 ban.push(`${mentioned}`)
 fs.writeFileSync('./database/banned.json', JSON.stringify(ban))
-susp = `🚫 @${mentioned[0].split('@')[0]} foi banido e você não poderá mais usar comandos do bot 🚫`
+susp = `🚫 @${mentioned[0].split('@')[0]} sei stato bannato e non sarai più in grado di utilizzare i comandi del bot 🚫`
 mentions(`${susp}`, mentioned, true)   
 break
 
 case 'unban':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 if (!isGroup) return reply(mess.only.group)
-if (!isOwner) return reply('*⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono ')
+if (!isOwner) return reply('*⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal proprietario \n\Per maggiori informazioni digita:\n ${prefix}proprietario ')
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return 
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 pru = '.\n'
@@ -1505,7 +1505,7 @@ break
 case 'addvip':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 if (!isGroup) return reply(mess.only.group)
-if (!isOwner) return reply('*⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono * ')
+if (!isOwner) return reply('*⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal proprietario \n\Per maggiori informazioni digita:\n ${prefix}proprietario * ')
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return 
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 pru = '.\n'
@@ -1521,7 +1521,7 @@ break
 case 'clearvp':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 if (!isGroup) return reply(mess.only.group)
-if (!isOwner) return reply('*⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono * ')
+if (!isOwner) return reply('*⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal proprietario \n\Per maggiori informazioni digita:\n ${prefix}proprietario * ')
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return 
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 pru = '.\n'
@@ -1543,7 +1543,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 				break
 		case 'unpremium':
 		if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-				if (!isOwner) return client.sendMessage(from, '⟨❗⟩ Desculpe, esse comando só pode ser usado pelo meu dono\n\nPara mais informações digite:\n ${prefix}dono *',MessageType.text, { quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true}, sendEphemeral: true, thumbnail: fs.readFileSync(`./me.jpg`, 'base64')})
+				if (!isOwner) return client.sendMessage(from, '⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal proprietario \n\Per maggiori informazioni digita:\n ${prefix}proprietario *',MessageType.text, { quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true}, sendEphemeral: true, thumbnail: fs.readFileSync(`./me.jpg`, 'base64')})
 				premm = body.slice(11)
 				premium.splice(`${premm}@s.whatsapp.net`, 1)
 				fs.writeFileSync('./database/vip.json', JSON.stringify(premium))
@@ -1711,7 +1711,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
                     break
 					
 					break
-				case 'clearall':
+				case 'cancellatutto':
 				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					if (!isOwner) return reply('⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal creatore\n\Per altre informazioni digita:\n ${prefix}creatore ')
 					anu = await client.chats.all()
@@ -1762,7 +1762,7 @@ break
 case 'aviso':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					if (!isOwner) return reply('⟨❗⟩ Scusate, questo comando può essere utilizzato soltanto dal creatore\n\Per maggiori informazioni digita:\n ${prefix}creatore ')
-					if (args.length < 1) return reply('⟨❗⟩ Qual èiltestomlk? Tu e il proprietario non lo conoscete?')
+					if (args.length < 1) return reply('⟨❗⟩ Qual è il testo mlk? Tu e il proprietario non lo conoscete?')
 					anu = await client.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -1852,7 +1852,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 try{
 if(!isGroup) return reply(mess.only.group)
 d = []
-teks = '🐒 Rank dos camacos\n'
+teks = '🐒 Rank scimmie\n'
 for(i = 0; i < 5; i++) {
 r = Math.floor(Math.random() * groupMetadata.participants.length + 0)
 teks += `️‍🐒❧ @${groupMembers[r].jid.split('@')[0]}\n`
@@ -1861,7 +1861,7 @@ d.push(groupMembers[r].jid)
 mentions(teks, d, true)
 } catch (e) {
 console.log(e)
-reply('⟨❗⟩ ERRO. Tente novamente')
+reply('⟨❗⟩ ERRORE. Ritenta nuovamente')
 }
 break
 case 'rankgay':
@@ -1869,7 +1869,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 try{
 if(!isGroup) return reply(mess.only.group)
 d = []
-teks = '🏳️‍🌈 Rank dos mais gays\n'
+teks = '🏳️‍🌈 Rank gay\n'
 for(i = 0; i < 5; i++) {
 r = Math.floor(Math.random() * groupMetadata.participants.length + 0)
 teks += `🏳️‍🌈❧ @${groupMembers[r].jid.split('@')[0]}\n`
@@ -1878,7 +1878,7 @@ d.push(groupMembers[r].jid)
 mentions(teks, d, true)
 } catch (e) {
 console.log(e)
-reply('⟨❗⟩ ERRO. Tente novamente')
+reply('⟨❗⟩ ERRORE. Ritenta nuovamente)
 }
 break
 case 'ranklindos':
@@ -1886,7 +1886,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 try{
 if(!isGroup) return (mess.only.group)
 d = []
-teks = '🤩Rank dos mais lindos \n'
+teks = '🤩Rank più belli \n'
 for(i = 0; i < 5; i++) {
 r = Math.floor(Math.random() * groupMetadata.participants.length + 0)
 teks += `🤩❧ @${groupMembers[r].jid.split('@')[0]}\n`
@@ -1895,7 +1895,7 @@ d.push(groupMembers[r].jid)
 mentions(teks, d, true)
 } catch (e) {
 console.log(e)
-reply('⟨❗⟩ ERRO. Tente novamente')
+reply('⟨❗⟩ ERRORE. Ritenta nuovamente)
 }
 break
 case 'ranknazista':
@@ -1903,7 +1903,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 try{
 if(!isGroup) return reply(mess.only.group)
 d = []
-teks = '💂‍♂️Rank dos mais nazistas\n'
+teks = '💂‍♂️Rank nazisti\n'
 for(i = 0; i < 5; i++) {
 r = Math.floor(Math.random() * groupMetadata.participants.length + 0)
 teks += `💂‍♂️❧ @${groupMembers[r].jid.split('@')[0]}\n`
@@ -1912,7 +1912,7 @@ d.push(groupMembers[r].jid)
 mentions(teks, d, true)
 } catch (e) {
 console.log(e)
-reply('⟨❗⟩ ERRO. Tente novamente')
+reply('⟨❗⟩ ERRORE. Ritenta nuovamente)
 }
 break
 case 'rankgostoso':
@@ -1920,7 +1920,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 try{
 if(!isGroup) return (mess.only.group)
 d = []
-teks = '😏Rank dos mais gostosos\n'
+teks = '😏Rank più fighi\n'
 for(i = 0; i < 5; i++) {
 r = Math.floor(Math.random() * groupMetadata.participants.length + 0)
 teks += `😏❧ @${groupMembers[r].jid.split('@')[0]}\n`
@@ -1929,7 +1929,7 @@ d.push(groupMembers[r].jid)
 mentions(teks, d, true)
 } catch (e) {
 console.log(e)
-reply('⟨❗⟩ ERRO. Tente novamente')
+reply('⟨❗⟩ ERRORE. Ritenta nuovamente)
 }
 break
 case 'rankgado':
@@ -1937,7 +1937,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 try{
 if(!isGroup) return (mess.only.group)
 d = []
-teks = '🐃Rank dos mais gados\n'
+teks = '🐃Rank bovini\n'
 for(i = 0; i < 5; i++) {
 r = Math.floor(Math.random() * groupMetadata.participants.length + 0)
 teks += `🐃❧ @${groupMembers[r].jid.split('@')[0]}\n`
@@ -1946,7 +1946,7 @@ d.push(groupMembers[r].jid)
 mentions(teks, d, true)
 } catch (e) {
 console.log(e)
-reply('⟨❗⟩ ERRO. Tente novamente')
+reply('⟨❗⟩ ERRORE. Ritenta nuovamente)
 }
 break
 case 'rankfeios':
@@ -1954,7 +1954,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 try{
 if(!isGroup) return (mess.only.group)
 d = []
-teks = '"🤓Rank dos mais feios \n'
+teks = '"🤓Rank più brutti  \n'
 for(i = 0; i < 5; i++) {
 r = Math.floor(Math.random() * groupMetadata.participants.length + 0)
 teks += `🤓❧ @${groupMembers[r].jid.split('@')[0]}\n`
@@ -1963,7 +1963,7 @@ d.push(groupMembers[r].jid)
 mentions(teks, d, true)
 } catch (e) {
 console.log(e)
-reply('⟨❗⟩ ERRO. Tente novamente')
+reply('⟨❗⟩ ERRORE. Ritenta nuovamente)
 }
 break
 case 'cassino':
@@ -1974,7 +1974,7 @@ const cassino = ['ㅤ\n*╔═─ CASSINO ─══*\n*║*\n*║*\n*╠* ROLETA
 					break
 case 'cassino2':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-if (!isPremium) return reply ("⟨❗⟩ Você não é um usuário vip. Para se tornar um vip digite: ${prefix}menu4")
+if (!isPremium) return reply ("⟨❗⟩ Non sei un utente vip. Per diventare un vip digita: ${prefix}menu4")
 		const sotoy = [
 		'🍊 : 🍒 : 🍐',
 		'🍒 : 🔔 : 🍊',
@@ -2066,9 +2066,8 @@ case 'grupinfo':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 if (!isGroup) return reply(ptbr.group())
 const { owner, creation, participants, desc } = groupMetadata
-infogp = 
-` 
-        INFORMAÇÕES DO GRUPO\n
+infogp = await getBuffer 
+        
   ‣Nome do grupo: ${groupName}
   ‣membros comuns: ${groupMembers.length}
   ‣Total de administradores: ${groupAdmins.length}
@@ -2085,7 +2084,7 @@ if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 idgrup = `${from.split("@s.whatsapp.net")[0]}`;
 client.groupUpdateSubject(idgrup, `${body.slice(9)}`)
-client.sendMessage(from, '⟨✔️⟩ Nome do grupo alterado com sucesso!', text, {
+client.sendMessage(from, '⟨✔️⟩ Nome del gruppo modificato con successo!', text, {
 quoted: mek
 })
 break
@@ -2095,7 +2094,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 client.groupUpdateDescription(from, `${body.slice(9)}`)
-client.sendMessage(from, '⟨✔️⟩ Descrição do grupo alterada com sucesso!', text, {
+client.sendMessage(from, '⟨✔️⟩ Descrizione del gruppo modificata con successo!', text, {
 quoted: mek
 })
 break
@@ -2122,7 +2121,7 @@ if (!isGroup) return reply(mess.only.group)
             client.sendMessage(from, ini_buffer, sticker, options)
             fs.unlinkSync(file)
             } else {
-            reply(`*⟨❗⟩ Por favor, marque uma figurinha*`)
+            reply(`*⟨❗⟩ Per favore, tagga uno sticker*`)
             }
             break
 				case 'hidetag':
@@ -2190,19 +2189,19 @@ break
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`Alvo removido com sucesso  : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Bersaglio rimosso con successo  : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
 					break*/
 				case 'simi':
 				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-if (args.length < 1) return reply(`Use ${prefix}simi texto`)
+if (args.length < 1) return reply(`Usa ${prefix}testo`)
 try { 
 anu = await fetchJson(`https://simsumi.herokuapp.com/api?text=${encodeURIComponent(body.slice(5))}`, {method: 'get'})
-if (anu.error) return reply('⟨❗⟩ Por favor, digite algo.\nExemplo: ${prefix}simi opa tudo bem?')
+if (anu.error) return reply('⟨❗⟩ Per favore, digita qualcosa.\Esempio: ${prefix}tutto bene?')
 client.sendMessage(from, `${anu.success} 🐤`, text, {quoted: mek})
 } catch {
-reply("⟨❗⟩ Erro ao executar comando")
+reply("⟨❗⟩ Errore nella esecuzione del comando")
 }
 break
 case 'mp3d':
@@ -2210,7 +2209,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
                 reply(mess.wait)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${body.slice(5)}&apikey=KENofc`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `⟨✔️⟩ MUSICA ENCONTRADA COM SUCESSO*\nTítulo : ${anu.result.title}\nUrl : ${anu.result.source}\nTamanho : ${anu.result.size}\n\n*ESPERE UM POUQUINHO, N SPAME O CHAT*`
+                 infomp3 = `⟨✔️⟩ MUSICA TROVATA CON SUCCESSO*\nTítulo : ${anu.result.title}\nUrl : ${anu.result.source}\nTamanho : ${anu.result.size}\n\n*ESPERE UM POUQUINHO, N SPAME O CHAT*`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
@@ -2223,7 +2222,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?apikey=${setting.zeksapi}&q=${body.slice(5)}`)
 				if (anu.error) return reply(anu.error)
 				titulo = "Off" //anu.result.title
-				infomp3 = `𝐂𝐨𝐧𝐭𝐚 𝐕𝐞𝐫𝐢𝐟𝐢𝐜𝐚𝐝𝐚\n❗MUSÍCA ENCONTRADA\n[❗] enviando sua música aguarde..`				
+				infomp3 = Account verificato\n❗MUSICA TROVATA\n[❗] inviando la sua musica..`				
 			    buffer = await getBuffer(`https://api-exteam.herokuapp.com/api/card-spotify?titulo=${encodeURIComponent(titulo)}&author=${encodeURIComponent(anu.result.source)}&album=PRIVATE-BOT&capa=${anu.result.thumbnail}`)
 				client.sendMessage(from, buffer, image, {quoted: mek, quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": infomp3, 'jpegThumbnail': fs.readFileSync('kk/sticker/botlogo.webp')}}}})					
                 msc = await getBuffer(anu.result.url_audio)				
@@ -2236,7 +2235,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					reply(mess.wait) 				 
 				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?apikey=${setting.zeksapi}&q=${body.slice(10)}`)
 				if (anu.error) return reply(anu.error)
-				infomp3 = `*❗VÍDEO ENCONTRADO*\n\n[❗] enviando seu vídeo aguarde..`				
+				infomp3 = `*❗VIDEO TROVATO*\n\n[❗] inviando il suo video..`				
 				foto = await getBuffer(`https://api-exteam.herokuapp.com/api/card-spotify?titulo=${encodeURIComponent(anu.result.title)}&author=${encodeURIComponent(anu.result.source)}&album=PRIVATE-BOT&capa=${anu.result.thumbnail}`)
 				client.sendMessage(from, foto, image, {quoted: mek, caption: infomp3})
 				dl = await getBuffer(anu.result.url_video)				
@@ -2247,7 +2246,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 reply(mess.wait)
 //play = body.slice(6)
 msc = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4/2?apikey=apivinz&q=${body.slice(6)}`)
-info =  `*MUSICA ENCONTRADA!!!*\nTítulo : ${msc.result.title}\nFonte : ${msc.source}\n\nBaixando sua musica`
+info =  `*MUSICA TROVATA!!!*\nTítulo : ${msc.result.title}\nFonte : ${msc.source}\n\nBaixando sua musica`
 buffer1 = await getBuffer(msc.result.thumb)
 buffer2 = await getBuffer(msc.result.link)
 client.sendMessage(from, buffer1, image, {quoted: mek, caption: info})
@@ -2259,7 +2258,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 reply(mess.wait)
 //play = body.slice(6)
 msc = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?apikey=apivinz&q=${body.slice(6)}`)
-info =  `*MUSICA ENCONTRADA!!!*\nTítulo : ${msc.result.title}\nFonte : ${msc.source}\n\nBaixando sua musica`
+info =  `*MUSICA TROVATA!!!*\nTítulo : ${msc.result.title}\nFonte : ${msc.source}\n\nBaixando sua musica`
 buffer1 = await getBuffer(msc.result.thumbnail)
 buffer2 = await getBuffer(msc.result.url_video)
 client.sendMessage(from, buffer1, image, {quoted: mek, caption: info})
@@ -2271,7 +2270,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 reply(mess.wait)
 //play = body.slice(6)
 msc = await fetchJson(`https://api-gdr2.herokuapp.com/api/ytplay?q=${body.slice(6)}`)
-info =  `*⟨✔️⟩ MUSICA ENCONTRADA*\n\nTítulo : ${msc.result.title}\nFonte : ${msc.url}\n\nBaixando sua musica`
+info =  `*⟨✔️⟩ MUSICA TROVATA*\n\nTítulo : ${msc.result.title}\nFonte : ${msc.url}\n\nBaixando sua musica`
 buffer1 = await getBuffer(msc.result.thumb)
 buffer2 = await getBuffer(msc.result.url)
 client.sendMessage(from, buffer1, image, {quoted: mek, caption: info})
@@ -2285,7 +2284,7 @@ teks = body.slice(6)
 musica = await fetchJson(`https://api-gdr2.herokuapp.com/api/yt/play2?query=${teks}`)
 //buffer = await getBuffer(musica.result.thumbnail)
 buffer2 = await getBuffer(musica.result.url_audio)
-//buffer3 = 'Musica encontrada enviando'
+//buffer3 = 'Musica trovata inviata'
 teks2 =`𝚈𝚘𝚞𝚝𝚞𝚋𝚎 𝙿𝚕𝚊𝚢 𝙼𝚞𝚜𝚒𝚌
 𝚄𝚜𝚞𝚊́𝚛𝚒𝚘 @${sender.split("@")[0]}
 𝚝𝚒𝚝𝚞𝚕𝚘 ${musica.result.title}`
@@ -2295,8 +2294,8 @@ break*/
 case 'covid19':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 post = await fetchJson(`https://api-gdr2.herokuapp.com/api/covidbr`)
-send = `➻ 𝐋𝐎𝐂𝐀𝐋: ${post.result.local}\n➻ 𝐃𝐀𝐃𝐎𝐒: ${post.result.dadosAtualizados}\n➻ 𝐓𝐎𝐓𝐀𝐋 𝐃𝐄 𝐂𝐀𝐒𝐎𝐒: ${post.result.totalCasos}\n➻ 𝐍𝐎𝐕𝐎𝐒 𝐂𝐀𝐒𝐎𝐒: ${post.result.novosCasos}\n➻ 𝐓𝐎𝐓𝐀𝐋 𝐃𝐄 𝐌𝐎𝐑𝐓𝐄𝐒: ${post.result.totalMortes}\n➻ 𝐍𝐎𝐕𝐀𝐒 𝐌𝐎𝐑𝐓𝐄𝐒: ${post.result.novasMortes}\n➻ 𝐑𝐄𝐂𝐔𝐏𝐄𝐑𝐀𝐃𝐎𝐒: ${post.result.recuperados}\n 
-➻ 𝐕𝐀𝐂𝐈𝐍𝐀𝐃𝐎𝐒-1: ${post.result.vacinadosPrimeiraDose}\n➻ 2° 𝐃𝐎𝐒𝐄: ${post.result.vacinadosSegundaDose}\n➻ 𝐁𝐎𝐋𝐄𝐓𝐈𝐍𝐒: ${post.result.boletinsContabilizados}`
+send = `➻ 𝐋𝐎𝐂𝐀𝐋: ${post.result.local}\n➻DADI: ${post.result.dadosAtualizados}\n➻CASI TOTALI ${post.result.totalCasos}\n➻NUOVO CASO: ${post.result.novosCasos}\n➻TOTALE DEI MORTI: ${post.result.totalMortes}\n➻NUOVE MORTI: ${post.result.novasMortes}\n➻RECUPERANDO: ${post.result.recuperados}\n 
+➻VACCINARE-1: ${post.result.vacinadosPrimeiraDose}\n➻ 2°DOSE: ${post.result.vacinadosSegundaDose}\n➻BOLLETTINI: ${post.result.boletinsContabilizados}`
 client.sendMessage(from, send, text, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "𝐕𝐞𝐫𝐢𝐟𝐢𝐜𝐚𝐝𝐨 𝐩𝐨𝐫 𝐖𝐡𝐚𝐭𝐬𝐚𝐩𝐩\nEstatisticas Covid-19 Br", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('./assets/botlogo.webp')} } }, caption: "<//>" })
 break
 case 'google': //@SUPRA 
@@ -2310,12 +2309,12 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 case 'meme':
 case 'memes':
 if (!isRegistrar) return reply(mess.registro)
-if (args.length < 0) return reply('Cadê o texto, hum?')
+if (args.length < 0) return reply('Dov è il testo, hum?')
 reply(mess.wait)
 anu = await getBuffer(`https://bot-apis.herokuapp.com/fillipe/meme`)
 client.sendMessage( from, anu, image, {quoted:mek})
 break
-				case 'abraço':
+				case 'abbraccio':
 				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 if (!isGroup) return reply(mess.only.group)
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return 
@@ -2344,7 +2343,7 @@ break
                         reply(mess.only.admin)
                     }
                     break
-				case 'marcar':
+				case 'tagga':
 				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -2357,7 +2356,7 @@ break
 					}
 					mentions(teks, members_id, true)
 					break
-                                case 'marcar2':
+                                case 'tagga2':
                                 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					members_id = []
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
@@ -2368,7 +2367,7 @@ break
 					}
 					reply(teks)
 					break
-				case 'marcar3':
+				case 'tagga3':
 				if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					members_id = []
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
@@ -2382,7 +2381,7 @@ break
 case 'rr':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
                     rate = body.slice(1)
-                    ratee = ["Tac... Não disparou","Tac... Não disparou,ainda...","Tac💥 Disparou e você morreu","Tac💥Disparou mas a bala pegou de raspão","A arma falhou","Tac... Por pouco que não dispara...","Tac... A arma estava descarregada"]
+                    ratee = ["Tac... Non ha sparato","Tac... Non ha sparato,ainda..."ancora,"Tac💥 Ti hanno sparato a morte","Tac💥Ha sparato ma il proiettile ti ha sfiorato","l arma ha fallito","Tac... Per poco non ha sparato...","Tac... L arma era scarica"]
                     const cu = ratee[Math.floor(Math.random() * ratee.length)]
                     client.sendMessage(from, ''+ cu+'', text, { quoted: mek })
                     break
@@ -2390,16 +2389,16 @@ case 'plaquinha':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					if (args.length < 1) return reply(mess.blank)
 					teks = body.slice(11)
-					if (teks.length > 25) return reply('⟨❗⟩ O texto é longo, até 25 caracteres')
-					reply('*⟨⌛⟩ Aguarde... Caso der erro tente novamente ✓*')
+					if (teks.length > 25) return reply('⟨❗⟩ Il testo è troppo lungo, fino a 25 caratteri')
+					reply('*⟨⌛⟩ Attendere... In caso di errore tenta nuovamente ✓*')
 					buffer = await getBuffer(`https://ubbornag.sirv.com/Screenshot_20210513-151821.png?text.0.text=${teks}&text.0.position.x=-40%25&text.0.position.y=-65%25&text.0.size=30&text.0.color=000000&text.0.opacity=53&text.0.font.family=Shadows%20Into%20Light%20Two&text.0.outline.blur=15`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ta na mão 😈'})
 					break
 case 'qrcode':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-        			if (!isPremium) return reply('⟨❗⟩ Você não é um usuário vip. Para se tornar um vip digite: ${prefix}menu4' ,text, { quoted: mek })
+        			if (!isPremium) return reply('⟨❗⟩ Non sei un utente vip. Per diventare un vip digita: ${prefix}menu4' ,text, { quoted: mek })
 					const tex = encodeURIComponent(body.slice(8))
-					if (!tex) return client.sendMessage(from, '⟨❗⟩ Por favor, digite um texto/url que deseja criar um código qr', text, {quoted: mek})
+					if (!tex) return client.sendMessage(from, '⟨❗⟩ Per favore, digita un testo/url che crea un codice qr ', text, {quoted: mek})
 					const bufferr = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${tex}`)
 					client.sendMessage(from, bufferr, image, {quoted: mek})
 					break
@@ -2419,7 +2418,7 @@ fs.unlinkSync(mediaaa)
 break
 case 'ttp':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-if (args.length < 1) return reply(`⟨❗⟩ Por favor, insira o texto\nUso: ${prefix}ttp KEN`)
+if (args.length < 1) return reply(`⟨❗⟩ Per favore, inserire un testo\nUso: ${prefix}ttp KEN`)
 attp2 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${encodeURIComponent(body.slice(4))}`)
 client.sendMessage(from, attp2, sticker, {quoted: mek})
 break
@@ -2472,7 +2471,7 @@ break
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`⟨❗⟩ Falha ao converter $ {type} em sticker`)
+								reply(`⟨❗⟩ Non riesco a convertire $ {type} em sticker`)
 							})
 							.on('end', function () {
 								console.log('Finish')
@@ -2500,7 +2499,7 @@ break
 							fs.unlinkSync(media)
 							let buffer = Buffer.from(res.base64img, 'base64')
 							fs.writeFileSync(ranp, buffer, (err) => {
-								if (err) return reply('⟨❗⟩ Falha, ocorreu um erro, tente novamente mais tarde. ')
+								if (err) return reply('⟨❗⟩ Fallimento, si è verificato un errore, ritenta nuovamente più tardi. ')
 							})
 							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
 								fs.unlinkSync(ranp)
@@ -2541,9 +2540,9 @@ break
 				//_UTILIZAVEIS
 case'img':
 case 'image':
-case 'imagem':
+case 'immaggine':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-if (args.length < 1) return reply('⟨❗⟩ Por favor, digite o comando juntamente com o que você deseja buscar')
+if (args.length < 1) return reply('⟨❗⟩ Per favore, inserisci il comando insieme a ciò che vuoi cercare')
 client.updatePresence(from, Presence.composing)
 reply(mess.wait)
 try {
@@ -2553,25 +2552,25 @@ nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
 client.sendMessage(from, pok, image, {quoted: mek, caption: `Achei isso sobre: ${args}`})
 } catch {
-reply(`⟨❗⟩ Desculpe-me, não econtrei nada sobre ${agrs}...`)
+reply(`⟨❗⟩ Scusatemi, non ho trovato nulla ${agrs}...`)
 }
 break
 case 'opengc':
-                case 'abrirgp':
+                case 'apriregp':
                 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					client.updatePresence(from, Presence.composing) 
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					open = {
-					text: `Grupo aberto pelo administrador @${sender.split("@")[0]}\nAgora *todos os participantes* pode enviar mensagens`,
+					text: `Gruppo aperto per gli amministratori @${sender.split("@")[0]}\Adesso *tutti i partecipanti* possono inviare messaggi `,
 					contextInfo: { mentionedJid: [sender] }
 					}
 					client.groupSettingChange (from, GroupSettingChange.messageSend, false)
 					reply(open)
 					break
 case 'closegc':
-case 'fechargp':
+case 'chiuderegp':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					client.updatePresence(from, Presence.composing) 
 					if (!isGroup) return reply(mess.only.group)
@@ -2579,7 +2578,7 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					var nomor = mek.participant
 					const close = {
-					text: `Grupo fechado pelo administrador @${nomor.split("@s.whatsapp.net")[0]}\nAgora *apenas administrador* quem pode enviar mensagens`,
+					text: `Gruppo chiuso da un admin @${nomor.split("@s.whatsapp.net")[0]}\Adesso *solo gli amministratori* possono inviare messaggi `,
 					contextInfo: { mentionedJid: [nomor] }
 					}
 					client.groupSettingChange (from, GroupSettingChange.messageSend, true);
@@ -2601,12 +2600,12 @@ const { convertSticker } = require('./plugins/swm.js')
                     var imageBuffer = new Buffer.from(mantap, 'base64');
                     client.sendMessage(from, imageBuffer, MessageType.sticker, {quoted: fgif})
                     } else {
-                    reply('⟨❗⟩ Por favor, marque uma imagem!')
+                    reply('⟨❗⟩ Per favore, tagga un immagine!')
                     }
                     break
-case 'contar':
+case 'raccontare':
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-if (args.length == 0) return reply( '⟨❗⟩ Por favor digite um texto.\nExemplo: ${prefix}contar KEN')
+if (args.length == 0) return reply( '⟨❗⟩ Per favore digita un testo.\Esempio: ${prefix}contar KEN')
 const count = body.slice(8).length
 if (count === 1) {
 reply(`O texto possui ${count} caractere.`)
@@ -2620,7 +2619,7 @@ break
 client.updatePresence(from, Presence.composing) 
 random = `${Math.floor(Math.random() * 100)}`
 boiola = random
-if (boiola < 20 ) {bo = 'hmm... você é hetero😔'} else if (boiola == 21 ) {bo = '+/- boiola'} else if (boiola == 23 ) {bo = '+/- boiola'} else if (boiola == 24 ) {bo = '+/- boiola'} else if (boiola == 25 ) {bo = '+/- boiola'} else if (boiola == 26 ) {bo = '+/- boiola'} else if (boiola == 27 ) {bo = '+/- boiola'} else if (boiola == 28 ) {bo = '+/- boiola'} else if (boiola == 29 ) {bo = '+/- boiola'} else if (boiola == 30 ) {bo = '+/- boiola'} else if (boiola == 31 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 32 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 33 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 34 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 35 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 36 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 37 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 38 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 39 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 40 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 41 ) {bo = 'você é né?😏'} else if (boiola == 42 ) {bo = 'você é né?😏'} else if (boiola == 43 ) {bo = 'você é né?😏'} else if (boiola == 44 ) {bo = 'você é né?😏'} else if (boiola == 45 ) {bo = 'você é né?😏'} else if (boiola == 46 ) {bo = 'você é né?😏'} else if (boiola == 47 ) {bo = 'você é né?😏'} else if (boiola == 48 ) {bo = 'você é né?😏'} else if (boiola == 49 ) {bo = 'você é né?😏'} else if (boiola == 50 ) {bo = 'você é ou não?🧐'} else if (boiola > 51) {bo = 'você é gay🙈'
+if (boiola < 20 ) {bo = 'hmm... questo utente è etero😔'} else if (boiola == 21 ) {bo = '+/- boiola'} else if (boiola == 23 ) {bo = '+/- boiola'} else if (boiola == 24 ) {bo = '+/- boiola'} else if (boiola == 25 ) {bo = '+/- boiola'} else if (boiola == 26 ) {bo = '+/- boiola'} else if (boiola == 27 ) {bo = '+/- boiola'} else if (boiola == 28 ) {bo = '+/- boiola'} else if (boiola == 29 ) {bo = '+/- boiola'} else if (boiola == 30 ) {bo = '+/- boiola'} else if (boiola == 31 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 32 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 33 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 34 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 35 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 36 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 37 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 38 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 39 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 40 ) {bo = 'tenho minha desconfiança...😑'} else if (boiola == 41 ) {bo = 'você é né?😏'} else if (boiola == 42 ) {bo = 'você é né?😏'} else if (boiola == 43 ) {bo = 'você é né?😏'} else if (boiola == 44 ) {bo = 'você é né?😏'} else if (boiola == 45 ) {bo = 'você é né?😏'} else if (boiola == 46 ) {bo = 'você é né?😏'} else if (boiola == 47 ) {bo = 'você é né?😏'} else if (boiola == 48 ) {bo = 'você é né?😏'} else if (boiola == 49 ) {bo = 'você é né?😏'} else if (boiola == 50 ) {bo = 'você é ou não?🧐'} else if (boiola > 51) {bo = 'você é gay🙈'
 }
 hasil = `${rate} Você é ${random}% gay\n\n${bo}`
 reply(hasil)
@@ -2632,16 +2631,16 @@ if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 client.updatePresence(from, Presence.composing) 
 random = `${Math.floor(Math.random() * 100)}`
 porcentagem = random
-if (porcentagem < 20 ) {frase = 'Você não é😔'} else if (porcentagem == 21 ) {frase = '+/- ${algo}'} else if (porcentagem == 23 ) {frase = '+/- ${algo}'} else if (porcentagem == 24 ) {frase = '+/- ${algo}'} else if (porcentagem == 25 ) {frase = '+/- ${algo}'} else if (porcentagem == 26 ) {frase = '+/- ${algo}'} else if (porcentagem == 27 ) {frase = '+/- ${algo}'} else if (porcentagem == 28 ) {frase = '+/- ${algo}'} else if (porcentagem == 29 ) {frase = '+/- ${algo}'} else if (porcentagem == 30 ) {frase = '+/- ${algo}'} else if (porcentagem == 31 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 32 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 33 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 34 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 35 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 36 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 37 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 38 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 39 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 40 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 41 ) {frase = 'É sim em...'} else if (porcentagem == 42 ) {frase = 'É sim em...'} else if (porcentagem == 43 ) {frase = 'É sim em...'} else if (porcentagem == 44 ) {frase = 'É sim em...'} else if (porcentagem == 45 ) {frase = 'É sim em...'} else if (porcentagem == 46 ) {frase = 'É sim em...'} else if (porcentagem == 47 ) {frase = 'É sim em...'} else if (porcentagem == 48 ) {frase = 'É sim em...'} else if (porcentagem == 49 ) {frase = 'É sim em...'} else if (porcentagem == 50 ) {frase = '50% agora pra saber só ele dizendo🧐'} else if (porcentagem > 51) {frase = 'você é concerteza🙈'
+if (porcentagem < 20 ) {frase =if= Non lo è😔'} else if (porcentagem == 21 ) {frase = '+/- ${algo}'} else if (porcentagem == 23 ) {frase = '+/- ${algo}'} else if (porcentagem == 24 ) {frase = '+/- ${algo}'} else if (porcentagem == 25 ) {frase = '+/- ${algo}'} else if (porcentagem == 26 ) {frase = '+/- ${algo}'} else if (porcentagem == 27 ) {frase = '+/- ${algo}'} else if (porcentagem == 28 ) {frase = '+/- ${algo}'} else if (porcentagem == 29 ) {frase = '+/- ${algo}'} else if (porcentagem == 30 ) {frase = '+/- ${algo}'} else if (porcentagem == 31 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 32 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 33 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 34 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 35 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 36 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 37 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 38 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 39 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 40 ) {frase = 'Talvez seja em...😑'} else if (porcentagem == 41 ) {frase = 'É sim em...'} else if (porcentagem == 42 ) {frase = 'É sim em...'} else if (porcentagem == 43 ) {frase = 'É sim em...'} else if (porcentagem == 44 ) {frase = 'É sim em...'} else if (porcentagem == 45 ) {frase = 'É sim em...'} else if (porcentagem == 46 ) {frase = 'É sim em...'} else if (porcentagem == 47 ) {frase = 'É sim em...'} else if (porcentagem == 48 ) {frase = 'É sim em...'} else if (porcentagem == 49 ) {frase = 'É sim em...'} else if (porcentagem == 50 ) {frase = '50% agora pra saber só ele dizendo🧐'} else if (porcentagem > 51) {frase = 'você é concerteza🙈'
 }
 result = `${pessoa} Você é ${random}% ${algo}\n\n${frase}`
 reply(result)
 break
 				case 'img':
 case 'image':
-case 'imagem':
+case 'immagine:
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
-if (args.length < 1) return reply('Digite o comando juntamente com o que você deseja buscar')
+if (args.length < 1) return reply('Digita il comando insieme a ciò che vuoi cercare')
 client.updatePresence(from, Presence.composing)
 reply(mess.wait)
 try {
@@ -2670,7 +2669,7 @@ break
 								fs.unlinkSync(media)
 							})
 					} else {
-						reply('Só uma foto mano')
+						reply('solo una foto fra)
 					}
 					break
 //_COMANDOS DE AUDIO
@@ -2700,7 +2699,7 @@ slo = await client.downloadAndSaveMediaMessage(low)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${slo} -filter:a "atempo=0.9,asetrate=44100" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(slo)
-if (err) return reply('⟨❗⟩ Erro ao fazer o comando')
+if (err) return reply('⟨❗⟩ Errore durante l esecuzione del comando')
 hah = fs.readFileSync(ran)
 client.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
@@ -2708,7 +2707,7 @@ fs.unlinkSync(ran)
 break
 
 //_EFEITO ESQUILO PARA AUDIO
-case 'esquilo':
+case 'scoiattolo:
 if (!isPremium) return reply(mess.only.premium)
 if (!isRegistrar) return reply(mess.registro)//PEDI O REGISTRO
 pai = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -2716,7 +2715,7 @@ tup = await client.downloadAndSaveMediaMessage(pai)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${tup} -filter:a "atempo=0.7,asetrate=65100" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(tup)
-if (err) return reply('⟨❗⟩ Erro ao fazer o comando')
+if (err) return reply('⟨❗⟩ Errore durante l esecuzione del comando')
 hah = fs.readFileSync(ran)
 client.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
@@ -2732,7 +2731,7 @@ gem = await client.downloadAndSaveMediaMessage(muk)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${gem} -filter:a "atempo=1.6,asetrate=22100" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(gem)
-if (err) return reply('⟨❗⟩ Erro ao fazer o comando')
+if (err) return reply('⟨❗⟩ Errore durante l esecuzione del comando')
 hah = fs.readFileSync(ran)
 client.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
@@ -2748,7 +2747,7 @@ media = await client.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a "atempo=0.9,asetrate=95100" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
-if (err) return reply('⟨❗⟩ Erro ao fazer o comando')
+if (err) return reply('⟨❗⟩ Errore durante l esecuzione del comando')
 hah = fs.readFileSync(ran)
 client.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
