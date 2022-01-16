@@ -27,3 +27,6 @@ $ npm start
 
 
 scansiona il codice e divertiti :)
+
+
+RICORDA: hai bisogno di un altro dispositivo per scansionare il codice qr
