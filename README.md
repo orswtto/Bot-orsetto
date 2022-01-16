@@ -3,3 +3,12 @@
 
 
 per info contattare wa.me/393383814169
+
+
+PER INSTALLARE IL BOT:
+installare termux (NON DA PLAY STORE)
+$ pkg update && pkg upgrade -y
+$ pkg install git -y
+$ git clone https://github.com/orswtto/Bot-orsetto
+$ npm start
+scansiona il codice e divertiti :)
