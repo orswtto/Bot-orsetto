@@ -2,13 +2,13 @@
   "name": "Bot-orsetto",
   "version": "2.0.0",
   "description": "No comment",
-  "main": "start.js",
+  "main": "node.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: nessun testo specificato\" && exit 1",
-    "start": "node index.js"
+    "start": "node.js"
   },
   "keywords": [
     "termux",
