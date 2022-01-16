@@ -27,6 +27,6 @@ if [  "$inp"  =  "s"  ]; allora
     echo $GREEN"Hmmm era ora, ora digita npm start, scansiona il codice e divertirsi con il bot :)" 
 phi
 if [  "$inp"  =  "n"  ]; allora
-    echo $RED"Vabbe sei un meme inutile, rimuoviti gli spammerini manualmente :)" 
+    echo $RED"E davvero un peccato che tu non abbia insallato il bot, vabbè sarà per la prossima :)" 
     uscita
 phi
