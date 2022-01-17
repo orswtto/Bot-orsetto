@@ -22,7 +22,7 @@
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.2",
     "@kagchi/kag-api": "^1.5.5",
-    "async": "^2.4.1",
+    "async": "^3.2.3",
     "axios": "^0.21.0",
     "cfonts": "^2.9.0",
     "cpf": "^2.0.1",
