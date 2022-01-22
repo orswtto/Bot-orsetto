@@ -1,3 +1,5 @@
+dotnet add package QRCode
+
 [HttpGet]
 public IActionResult Get(string url)
 {
