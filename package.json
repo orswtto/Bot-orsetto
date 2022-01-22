@@ -2,7 +2,7 @@
   "name": "Bot-orsetto",
   "version": "0.0.2",
   "description": "Nessun commento"
-  "main": "index.js",
+  "main": "generatoreqr.js",
   "directories": {
     "lib": "lib"
   },
