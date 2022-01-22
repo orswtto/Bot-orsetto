@@ -10,3 +10,4 @@ public IActionResult Get(string url)
 
     return this.Content(qrCode, MediaTypeHeaderValue.Parse("image/svg+xml"));
 }
+git rm
