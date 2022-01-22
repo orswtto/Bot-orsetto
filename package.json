@@ -10,13 +10,7 @@
     "test": "echo \"Error: nessun testo specificato\" && exit 1",
     "start": "node.js"
   },
-  "keywords": [
-    "termux",
-    "whatsapp",
-    "bot",
-    "whatsapp",
-    "bot"
-  ],
+  "keywords": [ "termux", "whatsapp", "bot", "whatsapp", "bot"],
   "author": "orsetto",
   "license": "ISC",
   "dependencies": {
