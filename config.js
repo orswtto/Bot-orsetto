@@ -75,12 +75,12 @@ banative (num) - rimuove i membri con un certo qnt di numeri msg verso il basso
 filter (num) - elenca i membri con un certo qnt di numeri msg verso il basso]
 attività - elenca l'attività di tutti i membri del gruppo
 Nota: il numero di messaggi potrebbe essere impreciso a causa del conteggio da parte del bot.
-const adminmsgtype = '*Sei adm ent n Ti bannerò per aver inviato una sorta di messaggio proibito*'
+const adminmsgtype = '*Non sei admin, verrai bannato per aver inviato una sorta di messaggio proibito*'
 messaggio da quando adm invia tipi di messaggio vietati
 const banmsgporn = 'Hmmm con antiporn attivato, già sapere bene...'
 messaggio di divieto su antiporn
 
-const adminmsgporn = '*You're adm ent n I'll ban for sending porn*'
+const adminmsgporn = '*Non sei admin, verrai bannato per aver mandato un porno*'
 messaggio quando adm invia porno con antiporn attivato
 
 const banmsglink = 'Run Common Member, Ban is Near...'
@@ -91,7 +91,7 @@ messaggio da quando adm invia link
 
 const adminmsgpalavra = 'questo è nell'elenco delle parole bandite dal bot'
 messaggio quando adm invia una parola vietata dal bot
-const banmsgpalavra = 'Parola proibita? Sai, giusto?
+const banmsgpalavra = 'Parola proibita, lo sai, giusto?
 messaggio di divieto quando si invia una parola bannata dal bot
 
 const qnttravahardrole =  2
@@ -122,14 +122,14 @@ const botlindo = 'Bakaaaa 😣😣'
 const linkbotlindo = 'https://photos1.iorbix.com/00/00/00/00/02/72/43/64/C--6tZwaASQH-b.jpg'
 const botfeio = 'Sembri un sirgueijo, un granchio 😡'
 const cadebot = 'Mi ha chiamato onii-chan 👉👈?'
-const botfdp = 'Fuck you boy, kick your ass when you're asleep'
-const botgostoso = 'Arigato go sai masu 😳👉👈'
-const botfofo = 'Arigato go sai masu 😳👉👈'
+const botfdp = 'Fottiti ragazzo, prenditi a calci in culo quando dormi'
+const botgostoso = 'Grazie ancora 😳👉👈'
+const botfofo = 'Grazie ancora 😳👉👈'
 const botbaianor = 'Ho invitato la tua scheda madre alla mia rete il tuo corno'
 const botcorno = 'Vai a scoparti, giocatore ff, acquirente pacchetto piedi'
 const botputa = 'Signora tua madre 😡'
 const botgay = 'Parlava il manja rotoli 😡'
-const botviado = 'Spoke the manja rolls 😡'
+const botviado = 'Ha parlato, l'involtino di manja  😡'
 const numbotfeio = 'signora tua madre 😡'
 CHIAVI
 
@@ -138,14 +138,14 @@ lascia che il disordine = {
     aspetta: '⌛ Aspetta un po'... ⌛',  
     successo: "✔️ Successo! ✔️",  
     errore: {
-        stick: "❌ non riuscito, si è verificato un errore durante la conversione dell'immagine in un ❌",  
+        stick: "❌ non riuscito, si è verificato un errore durante la conversione dell'immagine in uno sticker ❌",  
         Iv: '❌ Link non valido ❌'
     },
     solo: {
         group: '❌ Questo comando può essere utilizzato solo in gruppi! ❌',  
         ownerG: '❌ Questo comando può essere utilizzato solo dal gruppo proprietario! ❌',  
         ownerB: '❌ Questo comando può essere utilizzato solo dal numero del proprietario! ❌',  
-        admin: '❌ SILENZIO MEME NON HAI IL PERMESSO DI USARE STO COMANDO NON TI VEDO ADMIN ❌',
+        admin: '❌ SILENZIO MEMBRO COMUNE, NON SEI AMMINISTRATORE! ❌',
         Badmin: '❌ Questo comando può essere utilizzato solo quando il bot diventa amministratore! ❌'
     }
 }
